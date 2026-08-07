@@ -3,8 +3,8 @@ import Logo from '../assets/img/6a0c63265ec9ccc9e7f030dd_Riley Logo.svg'
 const Header = () => {
     return (
         <header>
-            <div className="w-full flex justify-center">
-                <div className="flex container w-full space-x-8 px-28">
+            <div className='w-full h-16'>
+                <div className="w-9/12 flex mx-auto justify-between px-16">
                     <div className='flex w-2/3 relative h-16'>
                         <div className="w-64 h-16 absolute">
                             <img className="h-full mx-1" width='113' src={Logo} alt='logo' />
