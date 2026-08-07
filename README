@@ -1,0 +1,3 @@
+npx create-react-app First_task --template typescript
+npm i tailwindcss
+npx tailwindcss init
