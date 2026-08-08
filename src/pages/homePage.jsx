@@ -191,43 +191,52 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                    <div className="w-full fle flex-col justify-center mb-12">
-                        <div className="w-10/12 flex flex-col text-center"> 
-                            <div className="w-full flex justify-center">
-                                <p className="w-9/12 text-xl">Our tools could each tell us about one call, one account, one system. Riley is the only one that reads across all of it at once—and that changed what we could see. It became the business context layer that made our AI significantly smarter, more accurate, and far more useful in day-to-day decisions.</p>
+                    <div className="w-full flex flex-col mb-12">
+                        <div className="w-full flex flex-col text-center"> 
+                            <div className="w-full flex justify-center mb-16">
+                                <p className="w-7/12 text-xl">Our tools could each tell us about one call, one account, one system. Riley is the only one that reads across all of it at once—and that changed what we could see. It became the business context layer that made our AI significantly smarter, more accurate, and far more useful in day-to-day decisions.</p>
                             </div>
-                            <p className="text-2xl mb-12">Cesar De La Garza</p>
-                            <p className="text-lg text-gray-500 mb-32">VP of Data Science, Company Name</p>
+                            <p className="text-2xl mb-3">Cesar De La Garza</p>
+                            <p className="text-lg text-gray-500 mb-32">Head of Technology Operations and Compliance, Closinglock</p>
                         </div>
-                        <div className="w-11/12 flex justify-between">
-                            <div className="w-5/12 h-full">
-                                <p className="text-5xl mb-12 text-left">Revenue intervention reminders</p>
-                                <p className="text-xl text-gray-500 text-left">The right teams receive prioritized, decision-ready insights at the right moment, so analysis turns into action, not dashboards</p>
-                                <div className="w-7/12 bg-gray-800 rounded-lg text-white text-md text-center px-3 py-2 mt-12">
-                                    Discover how we protect yout data
-                                </div>
-                            </div>
-                            <div className="w-5/12 flex justify-start">
-                                <div className="w-full flex justify-center">
-                                    <div claaaName="w-1/2 flex justify-center items-center">
-                                        <img className="w-auto h-auto" src={section2Img14} alt="jpg14" />
+                        <div className="w-full flex justify-center">
+                            <div className="w-10/12 flex">
+                                <div className="w-5/12 h-full">
+                                    <p className="text-5xl mb-12 text-left">Enterprise Ready Infrastructure to Protect Your Data</p>
+                                    <p className="text-xl text-gray-500 text-left">Riley is SOC 2 Type II and GDPR compliant, with strict security measures to ensure your customer data and insights remain private, protected, and never misused</p>
+                                    <div className="w-8/12 bg-gray-800 rounded-lg text-white text-md text-center px-3 py-2 mt-12">
+                                        Discover how we protect yout data
                                     </div>
-                                    <div claaaName="w-1/2 flex justify-center items-center">
-                                        <img className="w-auto h-auto" src={section2Img15} alt="jpg15" />
+                                </div>
+                                <div className="w-6/12 flex justify-start">
+                                    <div className="w-full flex justify-center">
+                                        <div claaaName="w-1/2 flex justify-center items-center">
+                                            <img className="w-auto h-auto" src={section2Img14} alt="jpg14" />
+                                        </div>
+                                        <div claaaName="w-1/2 flex justify-center items-center">
+                                            <img className="w-auto h-auto" src={section2Img15} alt="jpg15" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div> 
                     </div>
                 </section>
-                <section className="w-full flex">
-                    <div className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                        <div className="w-full flex bg-test justify-center text-center pt-32">
-                            <div clasName="w-full flex justify-center">
-                                <p className="w-10/12 text-6xl mb-12 text-center justify-center">Discover your hidden growth drivers</p>
+                <section className="w-full flex bg-test">
+                    <div className="w-9/12 flex mx-auto pl-16 pr-12 py-20">
+                        <div className="w-full flex flex-col text-center pt-32">
+                            <div className="w-full flex justify-center mb-14">
+                                <div className="w-7/12 text-7xl">
+                                    Discover your hidden growth drivers
+                                </div>
                             </div>
                             <div className="w-full flex justify-center">
-                                
+                                <input className="w-1/3 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email to get started" />
+                            </div>
+                            <div className="w-full flex justify-center mb-40">
+                                <div className="w-1/3 bg-gray-800 rounded-lg text-white text-md text-center px-3 py-2 mt-8">
+                                    See what's driving growth
+                                </div>
                             </div>
                         </div>
                     </div>
