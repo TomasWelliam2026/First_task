@@ -2,8 +2,8 @@ import Logo from '../assets/img/6a0c63265ec9ccc9e7f030dd_Riley Logo.svg'
 
 const Header = () => {
     return (
-        <header>
-            <div className='w-full h-16'>
+        <header className='flex relative'>
+            <div className='w-full h-16 absolute top-0 left-0 z-20'>
                 <div className="w-9/12 flex mx-auto justify-between px-16">
                     <div className='flex w-2/3 relative h-16'>
                         <div className="w-64 h-16 absolute">
@@ -24,7 +24,6 @@ const Header = () => {
                             </div>
                             <div className='text-center flex justify-center text-gray-600 items-center cursor-pointer px-4'>
                                 CostomerStories
-                                <select className='pl-1' ></select>
                             </div>
                         </div>
                     </div>
