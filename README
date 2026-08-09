@@ -1,3 +1,6 @@
 npx create-react-app First_task --template typescript
 npm i tailwindcss
 npx tailwindcss init
+
+ssh-keygen -t ed25519 -C "tomas.welliam2004@outlook.com"
+cat ~/.ssh/id_ed25519.pub
