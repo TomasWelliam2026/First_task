@@ -24,28 +24,28 @@ const HomePage = () => {
     return (
         <main>
             <div className='w-full'>
-                <section className="w-[1440px] h-[680px] flex mx-auto justify-between pt-[144px] pl-[62px] pr-[46px] top-[20px] ">
-                    <div className="w-[577.78px] mr-[32px]"> 
-                        <div className="w-full flex flex-col mb-[32px]">
-                            <h1 className="text-[64px] leading-[64px] tracking-[3px]">Know what's happening with <br/>revenue.</h1>
-                            <h1 className="text-[64px] leading-[64px]  text-gray-400 mb-[32px]">Before it happens.</h1>
-                            <p className="text-xl text-[18px] leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
+                <section className="w-[470px] sm:w-[940px] md:w-[1440px] h-[170px] sm:h-[340px] md:h-[680px] pt-[36px] sm:pt-[72px] md:pt-[144px] pl-[15px] sm:pl-[31px] md:pl-[62px] pr-[11px] sm:pr-[23px] md:pr-[46px] top-[5px] sm:top-[10px] md:top-[20px] flex mx-auto justify-between ">
+                    <div className="w-[144.25px] sm:w-[288.5px] md:w-[577.78px] mr-[8px] sm:mr-[16px] md:mr-[32px]"> 
+                        <div className="w-full flex flex-col mb-[8px] sm:mb-[16px] md:mb-[32px]">
+                            <h1 className="text-[16px] sm:text-[32px] md:text-[64px] leading-[16px] sm:leading-[32px] md:leading-[64px] tracking-[3px]">Know what’s happening with <br/>revenue.</h1>
+                            <h1 className="text-[16px] sm:text-[32px] md:text-[64px] leading-[16px] sm:leading-[32px] md:leading-[64px] text-gray-400 mb-[8px]sm:mb-[16px] md:mb-[32px]">Before it happens.</h1>
+                            <p className="text-[5px] sm:text-[9px] md:text-[18px] leading-[8px] sm:leading-[16px] md:leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
                         </div>
-                        <div className="w-[362px] h-[104px] flex flex-col justify-between">
-                            <div className="w-full cursor-pointer bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
+                        <div className="w-[90px] sm:w-[181px] md:w-[362px] h-[26px] sm:h-[52px] md:h-[104px] flex flex-col justify-between">
+                            <div className="text-[4px] sm:text-[8px] md:text-[16px] leading-[6px] sm:leading-[12px] md:leading-[24px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer bg-gray-800 rounded-lg text-white  text-center ">
                                 Start Trial
                             </div>
-                            <div className="w-full cursor-pointer text-gray-800 text-[16px] text-center px-[32px] py-[12px]">
+                            <div className="text-[4px] sm:text-[8px] md:text-[16px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer text-gray-800 text-center ">
                                 See how it works
                             </div>
                         </div>
                     </div>
-                    <div className="w-[722.22px] h-[500px] flex relative"> 
-                        <div className="w-[722.22px] h-[471.23px] absolute z-10 top-[14px]">
-                            <img className="w-[722.22px] h-[471.23px] flex rounded-sm" src={Img1} alt="jpg1"/>
+                    <div className="w-[180px] sm:w-[361px] md:w-[722.22px] h-[125px] sm:h-[250px] md:h-[500px] flex relative"> 
+                        <div className="w-full h-[115px] sm:h-[236px] md:h-[471.23px] absolute z-10 top-[4px] sm:top-[7px] md:top-[14px]">
+                            <img className="w-full h-[115px] sm:h-[236px] md:h-[471.23px] flex rounded-sm" src={Img1} alt="jpg1"/>
                         </div>
-                        <div className="w-[292.98px] h-[475px] absolute z-10 right-0 top-[14px]">
-                            <img className='w-[280.98px] h-[475px] ml-[12px]' src={Img2} alt="jpg2"/>
+                        <div className="w-[73px] sm:w-[146px] md:w-[292.98px] h-[135px] sm:h-[270px] md:h-[475px] absolute z-10 right-0 top-[4px] sm:top-[7px] md:top-[14px]">
+                            <img className='w-full h-full ml-[5px] sm:ml-[8px] md:ml-[12px]' src={Img2} alt="jpg2"/>
                         </div>
                     </div>
                 </section>

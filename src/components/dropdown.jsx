@@ -8,7 +8,7 @@ const Dropdown = (props) => {
 
     return (
         <>
-            <div className='relative text-center text-[14px] flex justify-center text-gray-600 items-center cursor-pointer p-[20px] pr-[40px]'
+            <div className='text-[4.5px] sm:text-[8px] md:text-[14px] p-[4px] sm:p-[10px] md:p-[20px] pr-[8px] sm:pr-[20px] md:pr-[40px] flex justify-center text-gray-600 items-center relative text-center cursor-pointer'
                 onMouseEnter={() => {
                     drop.current.handleOpen()
                 }}
@@ -17,7 +17,7 @@ const Dropdown = (props) => {
                 }}
             >
                 {title}
-                <select className='flex w-[14.39px] absolute m-[20px] ml-0 top-0 bottom-0 right-0 align-left' disabled></select>
+                <select className='w-0 sm:w-[7.18px] md:w-[14.39px] m-[4px] sm:m-[10px] md:m-[20px] ml-0 flex absolute top-0 bottom-0 right-0 items-left' disabled></select>
                 <DropdownMenu
                     ref={drop}
                     list={list}
