@@ -29,10 +29,10 @@ const HomePage = () => {
                             <p className="text-xl text-[18px] leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
                         </div>
                         <div className="w-[362px] h-[104px] flex flex-col justify-between">
-                            <div className="w-full bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
+                            <div className="w-full cursor-pointer bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
                                 Start Trial
                             </div>
-                            <div className="w-full text-gray-800 text-[16px] text-center px-[32px] py-[12px]">
+                            <div className="w-full cursor-pointer text-gray-800 text-[16px] text-center px-[32px] py-[12px]">
                                 See how it works
                             </div>
                         </div>
@@ -111,7 +111,7 @@ const HomePage = () => {
                     </div>
                     <div className="w-full flex justify-center mb-[80px]">
                         <div className="w-[190.38px]">
-                            <div className="w-full bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[22px] py-[12px]">
+                            <div className="w-full bg-gray-800 rounded-lg cursor-pointer text-white text-[16px] leading-[24px] text-center px-[22px] py-[12px]">
                                 Request a demo
                             </div>
                         </div>
@@ -194,7 +194,7 @@ const HomePage = () => {
                         <div className="w-[495.23px] h-[438px]">
                             <p className=" text-[56px] leading-[64px] mt-[20px] mb-[40px] text-left">Enterprise Ready Infrastructure to Protect Your Data</p>
                             <p className="text-[18px] leading-[32px] mb-[40px] text-gray-500 text-left">Riley is SOC 2 Type II and GDPR compliant, with strict security measures to ensure your customer data and insights remain private, protected, and never misused</p>
-                            <div className="w-[330.8px] h-[50px] tracking-[0.56px] bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
+                            <div className="w-[330.8px] h-[50px] tracking-[0.56px] cursor-pointer bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
                                 Discover how we protect yout data
                             </div>
                         </div>

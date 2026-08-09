@@ -6,7 +6,7 @@ const Header = () => {
             <div className='fixed top-0 left-0 w-[1905px] z-50 bg-white h-[64px] px-[20px]'>
                 <div className="w-[1440px] flex mx-auto justify-between h-full px-[64px]">
                     <div className="w-full flex items-center relative ">
-                        <div className="w-[137px] h-[35.44px] float-left absolute">
+                        <div className="w-[137px] h-[35.44px] cursor-pointer float-left absolute">
                             <img className="h-full mx-[12px]" width='113' src={Logo} alt='logo' />
                         </div>
                         <div className='w-full h-full flex justify-between items-center'>
@@ -30,10 +30,10 @@ const Header = () => {
                                         </div>
                                     </div>
                                     <div className='flex w-full justify-end items-center'>
-                                        <div className='text-center flex justify-center text-gray-600 items-center  px-[10px] py-[5px] mx-[5px] mr-[23px] h-[28px]'>
+                                        <div className='text-center flex justify-center cursor-pointer hover:text-gray-500  text-gray-700 items-center  px-[10px] py-[5px] mx-[5px] mr-[23px] h-[28px]'>
                                             Login
                                         </div>
-                                        <div className='text-[14px] text-center cursor-pointer flex justify-center text-gray-600 items-center px-[10px] py-[5px] mr-[23px] h-[28px]'>
+                                        <div className='text-[14px] text-center cursor-pointer flex justify-center hover:text-gray-500 text-gray-700 items-center px-[10px] py-[5px] mr-[23px] h-[28px]'>
                                             Book a demo
                                         </div>
                                     </div>
