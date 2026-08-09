@@ -1,6 +1,9 @@
+
 import Logo from '../assets/img/6a0c63265ec9ccc9e7f030dd_Riley Logo.svg'
+import Dropdown from '../components/dropdown.jsx';
 
 const Header = () => {
+
     return (
         <header className='flex'>
             <div className='fixed top-0 left-0 w-[1905px] z-50 bg-white h-[64px] px-[20px]'>
@@ -13,18 +16,31 @@ const Header = () => {
                             <div className="w-full h-full flex">
                                 <div className='flex w-full'>
                                     <div className='w-[716.11px] flex ml-[185.234px] pl-[200px] items-center'>
-                                        <div className='relative text-center text-[14px] flex justify-center text-gray-600 items-center cursor-pointer p-[20px] pr-[40px]'>
-                                            Team
-                                            <select className='flex w-[14.39px] absolute m-[20px] ml-0 top-0 bottom-0 right-0 align-left' ></select>
-                                        </div>
-                                        <div className='relative text-center text-[14px] flex justify-center text-gray-600 items-center cursor-pointer p-[20px] pr-[40px]'>
-                                            UseCase
-                                            <select className='flex w-[14.39px] absolute m-[20px] ml-0 top-0 bottom-0 right-0 align-left' ></select>
-                                        </div>
-                                        <div className='relative text-center text-[14px] flex justify-center text-gray-600 items-center cursor-pointer p-[20px] pr-[40px]'>
-                                            Resources
-                                            <select className='flex w-[14.39px] absolute m-[20px] ml-0 top-0 bottom-0 right-0 align-left' ></select>
-                                        </div>
+                                        <Dropdown 
+                                            title={"Team"}
+                                            list={[
+                                                "Revenue & Finace",
+                                                "Marketing",
+                                                "Product",
+                                                "Reserch & Insights"
+                                            ]}
+                                        />
+                                        <Dropdown 
+                                            title={"UseCase"}
+                                            list={[
+                                                "Revenue Health Modal",
+                                                "Forecast Integrity",
+                                                "Discover Revenue Drivers",
+                                                "Revenue Intervention Signals"
+                                            ]}
+                                        />
+                                        <Dropdown 
+                                            title={"Resources"}
+                                            list={[
+                                                "Blog",
+                                                "Release Notes"
+                                            ]}
+                                        />
                                         <div className='relative text-center text-[14px] flex justify-center text-gray-600 items-center cursor-pointer px-[10px] py-[5px] mx-[5px] mr-[23px] h-[20px]'>
                                             CustomerStories
                                         </div>

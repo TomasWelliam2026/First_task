@@ -1,3 +1,4 @@
+
 import Img1 from '../assets/img/advert2.jpg' ;
 import Img2 from '../assets/img/ttt.jpg' ;
 
@@ -17,14 +18,16 @@ import section2Img13 from '../assets/img/6a291b93b87a53c6443cd712_17. Decision V
 import section2Img14 from '../assets/img/6a1b0c506d4d91ecdbbc1ba4_image 6.png' ;
 import section2Img15 from '../assets/img/6a1b0c5086c77558acbc501c_image 8.png' ;
 
+
 const HomePage = () => {
+
     return (
         <main>
             <div className='w-full'>
                 <section className="w-[1440px] h-[680px] flex mx-auto justify-between pt-[144px] pl-[62px] pr-[46px] top-[20px] ">
                     <div className="w-[577.78px] mr-[32px]"> 
                         <div className="w-full flex flex-col mb-[32px]">
-                            <h1 className="text-[64px] leading-[64px] ">Know what's happening with <br/>revenue.</h1>
+                            <h1 className="text-[64px] leading-[64px] tracking-[3px]">Know what's happening with <br/>revenue.</h1>
                             <h1 className="text-[64px] leading-[64px]  text-gray-400 mb-[32px]">Before it happens.</h1>
                             <p className="text-xl text-[18px] leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
                         </div>
@@ -135,7 +138,7 @@ const HomePage = () => {
                         <div className="w-[1140px] h-[388px] flex justify-between">
                             <div className="w-[353.33px] h-full flex flex-col" >
                                 <div className="w-full flex justify-center mx-auto mb-[20px]">
-                                    <div claaaName="w-[72px] h-[72px]">
+                                    <div className="w-[72px] h-[72px]">
                                         <img className="w-[72px] h-[72px] mx-12px" src={section2Img11} alt="jpg11" />
                                     </div>
                                 </div>
@@ -148,7 +151,7 @@ const HomePage = () => {
                             </div>
                             <div className="w-[353.33px] h-full flex flex-col" >
                                 <div className="w-full flex justify-center mx-auto mb-[20px]">
-                                    <div claaaName="w-[72px] h-[72px]">
+                                    <div className="w-[72px] h-[72px]">
                                         <img className="w-[72px] h-[72px] mx-12px" src={section2Img12} alt="jpg12" />
                                     </div>
                                 </div>
@@ -161,7 +164,7 @@ const HomePage = () => {
                             </div>
                             <div className="w-[353.33px] h-full flex flex-col" >
                                 <div className="w-full flex justify-center mx-auto mb-[20px]">
-                                    <div claaaName="w-[72px] h-[72px]">
+                                    <div className="w-[72px] h-[72px]">
                                         <img className="w-[72px] h-[72px] mx-12px" src={section2Img13} alt="jpg13" />
                                     </div>
                                 </div>

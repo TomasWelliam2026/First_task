@@ -22,7 +22,7 @@ const Footer = () => {
                         </div>
                         <div className='flex flex-col w-[173.36px] h-[296px] justify-between'>
                             <div className='flex h-full items-center'>
-                                <div class="w-full h-[196px]">
+                                <div className="w-full h-[196px]">
                                     <p className='text-[1rem] cursor-pointer text-start hover:text-gray-500 text-gray-900 py-[8px]'>
                                         Carrers
                                     </p>
