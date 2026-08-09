@@ -5,11 +5,11 @@ import Dropdown from '../components/dropdown.jsx';
 const Header = () => {
 
     return (
-        <header className='flex'>
-            <div className='fixed top-0 left-0 w-[1905px] z-50 bg-white h-[64px] px-[20px]'>
-                <div className="w-[1440px] flex mx-auto justify-between h-full px-[64px]">
-                    <div className="w-full flex items-center relative ">
-                        <div className="w-[137px] h-[35.44px] cursor-pointer float-left absolute">
+        <header className='fixed top-0 left-0  w-full h-[64px] flex justify-center '>
+            <div className='w-full z-50 bg-white h-[64px] px-[20px]'>
+                <div className="w-[1440px] h-ful flexl flex  px-[64px] mx-auto justify-between ">
+                    <div className="w-full grid grid-cols-12 items-center relative ">
+                        <div className="col-span-2 h-[35.44px] cursor-pointer float-left absolute">
                             <img className="h-full mx-[12px]" width='113' src={Logo} alt='logo' />
                         </div>
                         <div className='w-full h-full flex justify-between items-center'>

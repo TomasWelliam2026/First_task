@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./assets/fonts/variable/PlusJakartaSans-Italic[wght].ttf') format('true type');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
