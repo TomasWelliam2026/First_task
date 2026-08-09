@@ -15,7 +15,7 @@ const Header = () => {
                         <div className='w-full h-full flex justify-between items-center'>
                             <div className="w-full h-full flex">
                                 <div className='flex w-full'>
-                                    <div className='w-[716.11px] flex ml-[185.234px] pl-[200px] items-center'>
+                                    <div className='w-[716.11px] md: w-[416px]  flex ml-[185.234px] pl-[200px] items-center'>
                                         <Dropdown 
                                             title={"Team"}
                                             list={[
