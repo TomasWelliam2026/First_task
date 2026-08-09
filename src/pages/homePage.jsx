@@ -44,7 +44,7 @@ const HomePage = () => {
                         <div className="w-[722.22px] h-[471.23px] absolute z-10 top-[14px]">
                             <img className="w-[722.22px] h-[471.23px] flex rounded-sm" src={Img1} alt="jpg1"/>
                         </div>
-                        <div className="w-[292.98px] h-[475px] absolute right-0 top-[14px]">
+                        <div className="w-[292.98px] h-[475px] absolute z-10 right-0 top-[14px]">
                             <img className='w-[280.98px] h-[475px] ml-[12px]' src={Img2} alt="jpg2"/>
                         </div>
                     </div>

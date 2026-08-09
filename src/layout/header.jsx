@@ -5,17 +5,17 @@ import Dropdown from '../components/dropdown.jsx';
 const Header = () => {
 
     return (
-        <header className='fixed top-0 left-0  w-full h-[64px] mim-h-[64px] z-40 flex justify-center '>
-            <div className='w-full z-50 bg-white h-[64px] px-[20px]'>
-                <div className="w-[1440px] min-w-[1440px] flex mx-auto justify-between h-full px-[64px]">
+        <header className='fixed top-0 left-0  w-full md:h-[64px] sm:h-[32px] z-40 flex justify-center '>
+            <div className='w-full z-50 bg-white md:h-[64px] sm:h-[32px] md:px-[20px] sm:px-[10px]'>
+                <div className="md:w-[1440px] sm:w-[940px] flex mx-auto justify-between h-full px-[64px]">
                     <div className="w-full flex items-center relative ">
-                        <div className="w-[137px] h-[35.44px] cursor-pointer float-left absolute">
+                        <div className="md:w-[137px] sm:w-[68px] md:h-[35.44px] sm:h-[23px] cursor-pointer float-left absolute">
                             <img className="h-full mx-[12px]" width='113' src={Logo} alt='logo' />
                         </div>
                         <div className='w-full h-full flex justify-between items-center'>
                             <div className="w-full h-full flex">
                                 <div className='flex w-full'>
-                                    <div className='w-[716.11px] md: w-[416px]  flex ml-[185.234px] pl-[200px] items-center'>
+                                    <div className='md:w-[716.11px] sm: w-[416px]  flex ml-[185.234px] pl-[200px] items-center'>
                                         <Dropdown 
                                             title={"Team"}
                                             list={[
