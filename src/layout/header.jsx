@@ -5,7 +5,7 @@ import Dropdown from '../components/dropdown.jsx';
 const Header = () => {
 
     return (
-        <header className='fixed top-0 left-0  w-full h-[64px] mim-h-[64px] flex justify-center '>
+        <header className='fixed top-0 left-0  w-full h-[64px] mim-h-[64px] z-40 flex justify-center '>
             <div className='w-full z-50 bg-white h-[64px] px-[20px]'>
                 <div className="w-[1440px] min-w-[1440px] flex mx-auto justify-between h-full px-[64px]">
                     <div className="w-full flex items-center relative ">
