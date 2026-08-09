@@ -21,21 +21,23 @@ const HomePage = () => {
     return (
         <main>
             <div className='w-full'>
-                <section className="w-9/12 flex mx-auto justify-between pl-16 pr-12 py-20">
-                    <div className="w-6/12 flex flex-col"> 
-                        <h1 className="text-7xl">Know what's happening with revenue.</h1>
-                        <h1 className="text-7xl text-gray-400">Before it happens.</h1>
-                        <p className="text-xl mt-8 mb-8">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
-                        <div className="w-3/5">
-                            <div className="w-full bg-gray-800 rounded-lg text-white text-lg text-center px-3 py-2">
+                <section className="w-[1440px] h-[680px] flex mx-auto justify-between pt-[144px] pl-[62px] pr-[46px] top-[20px] ">
+                    <div className="w-[577.78px] mr-[32px]"> 
+                        <div className="w-full flex flex-col mb-[32px]">
+                            <h1 className="text-[64px] leading-[64px] ">Know what's happening with <br/>revenue.</h1>
+                            <h1 className="text-[64px] leading-[64px]  text-gray-400 mb-[32px]">Before it happens.</h1>
+                            <p className="text-xl text-[18px] leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
+                        </div>
+                        <div className="w-[362px] h-[104px] flex flex-col justify-between">
+                            <div className="w-full bg-gray-800 rounded-lg text-white text-[16px] text-center px-[32px] py-[12px]">
                                 Start Trial
                             </div>
-                            <div className="w-full text-gray-800 text-lg text-center px-3 py-3">
+                            <div className="w-full text-gray-800 text-[16px] text-center px-[32px] py-[12px]">
                                 See how it works
                             </div>
                         </div>
                     </div>
-                    <div className="w-7/12 flex relative"> 
+                    <div className="w-[722.22px] h-[500px] flex relative"> 
                         <div className="w-full h-full">
                             <img className="w-full h-full" src={Img1} alt="jpg1"/>
                         </div>
@@ -44,151 +46,155 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                    <div className="w-full flex flex-col text-center mb-12 "> 
-                        <p className="text-sm text-gray-500">TRUSTED  BY HIGH - PERFORMING REVENUE TEAMS</p>
-                    </div>
-                    <div className='w-full flex justify-center mb-36'>
-                        <div className="w-9/12 flex relative justify-between"> 
-                            <div className="h-7 w-auto">
-                                <img className="w-full h-full" src={section2Img1} alt="jpg1"/>
-                            </div>
-                            <div className="h-7 w-auto">
-                                <img className="w-full h-full" src={section2Img2} alt="jpg2"/>
-                            </div>
-                            <div className="h-7 w-auto">
-                                <img className="w-full h-full" src={section2Img3} alt="jpg3"/>
-                            </div>
-                            <div className="h-7 w-auto">
-                                <img className="w-full h-full" src={section2Img4} alt="jpg4"/>
-                            </div>
-                            <div className="h-7 w-auto">
-                                <img className="w-full h-full" src={section2Img5} alt="jpg5"/>
-                            </div>
-                        </div>
-                    </div>
+                <section className="w-full h-[252px] flex flex-col justify-between py-[80px]">
                     <div className="w-full flex flex-col text-center"> 
-                        <p className="text-5xl mb-12">Stop Finding Revenue Risk After It’s Too Late</p>
-                        <p className="text-xl text-gray-500">Riley continuously detects churn risk, forecast changes, and expansion opportunities across</p>
-                        <p className="text-xl text-gray-500">your GTM signals, before they appear in dashboards.</p>
+                        <p className="text-[12px] font-bold tracking-[0px] text-gray-500">TRUSTED  BY HIGH - PERFORMING REVENUE TEAMS</p>
                     </div>
-                </section>
-                <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                    <div className="w-full flex justify-center text-center mb-36">
-                        <div className="w-11/12 flex justify-between">
-                            <div className="w-5/12 h-full">
-                                <p className="text-5xl mb-12 text-left">From fragmented data to a single operating view</p>
-                                <p className="text-xl text-gray-500 text-left">Customer, product, and revenue signals are continuously reconciled into one trusted business model, so every team works from the same reality</p>
+                    <div className='w-full flex justify-center'>
+                        <div className="w-[949px] h-[40px] flex relative justify-between"> 
+                            <div className="w-auto">
+                                <img className="w-[81px] h-[40px] mx-[12px]" src={section2Img1} alt="jpg1"/>
                             </div>
-                            <div className="w-6/12 h-full">
-                                <img className='w-full h-full' src={section2Img6} alt="jpg6"/>
+                            <div className="w-auto">
+                                <img className="w-[40px] h-[40px]" src={section2Img2} alt="jpg2"/>
                             </div>
-                        </div> 
-                    </div>
-                    <div className="w-full flex justify-center text-center mb-36">
-                        <div className="w-11/12 flex justify-between">
-                            <div className="w-5/12 h-full">
-                                <p className="text-5xl mb-12 text-left">Revenue risk identified early</p>
-                                <p className="text-xl text-gray-500 text-left">Churn, renewal, and expansion signals surface months in advance, so teams know which customers to save, grow, or ignore before revenue decisions are forced</p>
+                            <div className="w-auto">
+                                <img className="w-[126px] h-[26px]" src={section2Img3} alt="jpg3"/>
                             </div>
-                            <div className="w-6/12 h-full">
-                                <img className='w-full h-full' src={section2Img7} alt="jpg7"/>
+                            <div className="w-auto">
+                                <img className="w-[90px] h-[27px]" src={section2Img4} alt="jpg4"/>
                             </div>
-                        </div> 
-                    </div>
-                    <div className="w-full flex justify-center text-center mb-36">
-                        <div className="w-11/12 flex justify-between">
-                            <div className="w-5/12 h-full">
-                                <p className="text-5xl mb-12 text-left">Defensible revenue forecasts</p>
-                                <p className="text-xl text-gray-500 text-left">Territory plans, pipeline coverage, renewal risk, and NRR projections are built on reconciled revenue data so the forecast holds up in board review, not just in internal meetings</p>
+                            <div className="w-auto">
+                                <img className="w-[102px] h-[27px]" src={section2Img5} alt="jpg5"/>
                             </div>
-                            <div className="w-6/12 h-full">
-                                <img className='w-full h-full' src={section2Img8} alt="jpg8"/>
-                            </div>
-                        </div> 
-                    </div>
-                    <div className="w-full flex justify-center text-center">
-                        <div className="w-11/12 flex justify-between">
-                            <div className="w-5/12 h-full">
-                                <p className="text-5xl mb-12 text-left">Revenue intervention reminders</p>
-                                <p className="text-xl text-gray-500 text-left">The right teams receive prioritized, decision-ready insights at the right moment, so analysis turns into action, not dashboards</p>
-                            </div>
-                            <div className="w-6/12 h-full">
-                                <img className='w-full h-full' src={section2Img9} alt="jpg9"/>
-                            </div>
-                        </div> 
-                    </div>
-                </section>
-                <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                    <div className="w-full flex justify-center mb-12">
-                        <div className="w-10/12 flex flex-col text-center"> 
-                            <p className="text-5xl mb-12">Intelligence is only as good as the data beneath it</p>
-                            <p className="text-xl text-gray-500">Without a unified data layer, expansion signals fragment, health scores mislead, and forecasts break. Riley orchestrates your data before intelligence is applied, so every decision is based on a trusted operating view Request a demo</p>
                         </div>
                     </div>
-                    <div className=" flex justify-center mb-12">
-                        <div className="w-2/12">
-                            <div className="w-full bg-gray-800 rounded-lg text-white text-lg text-center px-3 py-2">
+                </section>
+                <section className="w-full flex flex-col">
+                    <div className="w-[1100px] flex flex-col text-center mx-auto"> 
+                        <p className="text-[48px] mt-[80px] mb-[32px]">Stop Finding Revenue Risk After It’s Too Late</p>
+                        <p className="w-[800px] mx-auto text-[18px] leading-[32px]  text-gray-500 mb-[160px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across <br/>your GTM signals, before they appear in dashboards.</p>
+                        <div className="w-full flex justify-center text-center mb-[160px]">
+                            <div className="w-full flex justify-between">
+                                <div className="flex flex-col justify-center w-[446px] h-full">
+                                    <p className="text-[40px] leading-[48px] mb-[24px] text-left">From fragmented data to a single operating view</p>
+                                    <p className="text-[16px] leading-[28px] text-gray-500 text-left">Customer, product, and revenue signals are continuously reconciled into one trusted business model, so every team works from the same reality</p>
+                                </div>
+                                <div className="w-[550px] h-full">
+                                    <img className='w-full h-full mx-[12px]' src={section2Img6} alt="jpg6"/>
+                                </div>
+                            </div> 
+                        </div>
+                        <div className="w-full flex justify-center text-center mb-[160px]">
+                            <div className="w-full flex justify-between">
+                                <div className="flex flex-col justify-center w-[446px] h-full">
+                                    <p className="text-[40px] leading-[48px] mb-[24px] text-left">Revenue risk identified early</p>
+                                    <p className="text-[16px] leading-[28px] text-gray-500 text-left">Churn, renewal, and expansion signals surface months in advance, so teams know which customers to save, grow, or ignore before revenue decisions are forced</p>
+                                </div>
+                                <div className="w-[550px] h-full">
+                                    <img className='w-full h-full mx-[12px]' src={section2Img7} alt="jpg7"/>
+                                </div>
+                            </div> 
+                        </div>
+                        <div className="w-full flex justify-center text-center mb-[160px]">
+                            <div className="w-full flex justify-between">
+                                <div className="flex flex-col justify-center w-[446px] h-full">
+                                    <p className="text-[40px] leading-[48px] mb-[24px] text-left">Defensible revenue forecasts</p>
+                                    <p className="text-[16px] leading-[28px] text-gray-500 text-left">Territory plans, pipeline coverage, renewal risk, and NRR projections are built on reconciled revenue data so the forecast holds up in board review, not just in internal meetings</p>
+                                </div>
+                                <div className="w-[550px] h-full">
+                                    <img className='w-full h-full mx-[12px]' src={section2Img8} alt="jpg8"/>
+                                </div>
+                            </div> 
+                        </div>
+                        <div className="w-full flex justify-center text-center mb-[160px]">
+                            <div className="w-full flex justify-between">
+                                <div className="flex flex-col justify-center w-[446px] h-full">
+                                    <p className="text-[40px] leading-[48px] mb-[24px] text-left">Revenue intervention reminders</p>
+                                    <p className="w-[440px] text-[16px] leading-[28px] text-gray-500 text-left">The right teams receive prioritized, decision-ready insights at the right moment, so analysis turns into action, not dashboards</p>
+                                </div>
+                                <div className="w-[550px] h-full">
+                                    <img className='w-full h-full mx-[12px]' src={section2Img9} alt="jpg9"/>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+                <section className="w-[1440px] flex flex-col mx-auto py-[80px]">
+                    <div className="w-[940px] flex justify-center mx-auto">
+                        <div className="w-full flex flex-col text-center"> 
+                            <p className="text-[40px] leading-[48px] mb-[32px]">Intelligence is only as good as the data beneath it</p>
+                            <p className="text-[18px] leading-[32px] text-gray-500 mb-[32px]">Without a unified data layer, expansion signals fragment, health scores mislead, and forecasts break. Riley orchestrates your data before intelligence is applied, so every decision is based on a trusted operating view</p>
+                        </div>
+                    </div>
+                    <div className="w-full flex justify-center mb-[80px]">
+                        <div className="w-[190.38px]">
+                            <div className="w-full bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-3 py-2">
                                 Request a demo
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex justify-center">
-                        <div className="w-9/12 h-full">
+                    <div className="w-[942px] flex justify-center mx-auto">
+                        <div className="w-full h-full">
                             <img className='w-full h-full' src={section2Img10} alt="jpg10"/>
                         </div>
                     </div>
+                    <div className="w-full flex justify-center pt-[80px] px-[5%] pb-0 mb-[75px]">
+                        <div className="w-[800px] mx-auto flex justify-center">
+                            <div className="w-[800px] flex flex-col text-center "> 
+                                <p className="text-[40px] leading-[48px] mb-[32px]">Bad data breaks revenue decisions</p>
+                                <div className="w-full flex justify-center h-[64] mb-[80px]">
+                                    <p className="text-[18px] leading-[32px] text-gray-500 mb-[32px]">When signals are unified, intelligence shifts from reactive to predictive. Riley’s orchestration layer makes that possible.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full flex justify-center mb-[80px]">
+                        <div className="w-[1140px] h-[388px] flex justify-between">
+                            <div className="w-[353.33px] h-full flex flex-col" >
+                                <div className="w-full flex justify-center mx-auto mb-[20px]">
+                                    <div claaaName="w-[72px] h-[72px]">
+                                        <img className="w-[72px] h-[72px] mx-12px" src={section2Img11} alt="jpg11" />
+                                    </div>
+                                </div>
+                                <div className="w-full flex justify-center text-center mb-[20px]">
+                                    <p className="text-[24px] leading-[32px]">Your AI Can’t Outrun Your Data</p>
+                                </div>
+                                <div className="w-full flex justify-center text-center">
+                                    <p className="text-[18px] leading-[32px] text-gray-500">Applying AI to bad data doesn't create clarity - it scales noise, inconsistency, and poor decision making</p>
+                                </div>
+                            </div>
+                            <div className="w-[353.33px] h-full flex flex-col" >
+                                <div className="w-full flex justify-center mx-auto mb-[20px]">
+                                    <div claaaName="w-[72px] h-[72px]">
+                                        <img className="w-[72px] h-[72px] mx-12px" src={section2Img12} alt="jpg12" />
+                                    </div>
+                                </div>
+                                <div className="w-full flex justify-center text-center mb-[20px]">
+                                    <p className="text-[24px] leading-[32px]">Find Leverage Before It’s Obvious</p>
+                                </div>
+                                <div className="w-full flex justify-center text-center">
+                                    <p className="text-[18px] leading-[32px] text-gray-500">Miss early signals and the upside shrinks. The leverage window closes, and what’s left are big, costly bets with low confidence</p>
+                                </div>
+                            </div>
+                            <div className="w-[353.33px] h-full flex flex-col" >
+                                <div className="w-full flex justify-center mx-auto mb-[20px]">
+                                    <div claaaName="w-[72px] h-[72px]">
+                                        <img className="w-[72px] h-[72px] mx-12px" src={section2Img13} alt="jpg13" />
+                                    </div>
+                                </div>
+                                <div className="w-full flex justify-center text-center mb-[20px]">
+                                    <p className="text-[24px] leading-[32px]">Decision Velocity Creates First Movers</p>
+                                </div>
+                                <div className="w-full flex justify-center text-center">
+                                    <p className="text-[18px] leading-[32px] text-gray-500">First movers win by deciding faster  and acting while there’s still leverage, before it turns into discounts and costly commitments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
-                    <div className="w-full flex justify-center mb-12">
-                        <div className="w-10/12 flex flex-col text-center"> 
-                            <p className="text-5xl mb-12">Bad data breaks revenue decisions</p>
-                            <div className="w-full flex justify-center">
-                                <p className="w-9/12 text-xl text-gray-500">When signals are unified, intelligence shifts from reactive to predictive. Riley’s orchestration layer makes that possible.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-full flex justify-between">
-                        <div className="w-1/3 flex flex-col" >
-                            <div className="w-full h-16 flex justify-center">
-                                <div claaaName="w-16 h-16">
-                                    <img className="w-16 h-16" src={section2Img11} alt="jpg11" />
-                                </div>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-2xl">Your AI Can’t Outrun Your Data</p>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-xl text-gray-500">Applying AI to bad data doesn't create clarity - it scales noise, inconsistency, and poor decision making</p>
-                            </div>
-                        </div>
-                        <div className="w-1/3 flex flex-col" >
-                            <div className="w-full h-16 flex justify-center">
-                                <div claaaName="w-16 h-16">
-                                    <img className="w-16 h-16" src={section2Img12} alt="jpg12" />
-                                </div>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-2xl">Find Leverage Before It’s Obvious</p>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-xl text-gray-500">Miss early signals and the upside shrinks. The leverage window closes, and what’s left are big, costly bets with low confidence</p>
-                            </div>
-                        </div>
-                        <div className="w-1/3 flex flex-col" >
-                            <div className="w-full h-16 flex justify-center">
-                                <div claaaName="w-16 h-16">
-                                    <img className="w-16 h-16" src={section2Img13} alt="jpg13" />
-                                </div>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-2xl">Decision Velocity Creates First Movers</p>
-                            </div>
-                            <div className="w-full flex justify-center text-center mt-6">
-                                <p className="text-xl text-gray-500">First movers win by deciding faster  and acting while there’s still leverage, before it turns into discounts and costly commitments</p>
-                            </div>
-                        </div>
-                    </div>
+                <section className="w-full flex flex-col mx-auto">
+                    
                 </section>
                 <section className="w-9/12 flex flex-col mx-auto pl-16 pr-12 py-20">
                     <div className="w-full flex flex-col mb-12">
