@@ -28,9 +28,8 @@ const SignUpPage = () => {
         try {
             const res = await authService.SignUp(formData.username, formData.email, formData.newPassword, formData.confirmPassword);
             if( res.data.code === 200 ) {
-                navigator('/signin');
                 toast.success(res.data.msg) ;
-                console.log(res) ;
+                navigator('/signin');
             } else {
                 toast.error(res.data.msg) ;
             }

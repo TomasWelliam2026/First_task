@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     const SignIn = async (email, password) => {
         try {
             const res = await AuthService.SignIn(email, password);
-            if( res.userData.code === 200 ) {
+            if( res.code === 200 ) {
                 setUser(res.userData);
                 setLogin(true) ;
             }

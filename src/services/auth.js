@@ -15,8 +15,7 @@ class AuthService {
                 API_BASE_URL + "/api/auth/signin",
                 { email: email, password:password }
             );
-            console.log(response)
-            if (response.data.token) {
+            if (response.data.code === 200 ) {
                 const userData = this.TokenAnalysis(response.data.token);
                 return {
                     code: response.data.code,
@@ -64,7 +63,6 @@ class AuthService {
     }
 
     setToken(token) {
-        console.log(token)
         localStorage.setItem("token", token) ;
     }
 

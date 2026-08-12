@@ -27,7 +27,7 @@ const Header = () => {
                                 <div className='flex w-full'>
                                     <div className='sm:w-[416px] md:w-[716.11px] ml-[46px] sm:ml-[92.1px] md:ml-[185.234px] pl-[50px] sm:pl-[100px] md:pl-[200px] flex items-center'>
                                         <Dropdown 
-                                            title={"Team"}
+                                            title={{ name: "Team" }}
                                             list={[
                                                 {
                                                     name:"Revenue & Finace"
@@ -46,11 +46,10 @@ const Header = () => {
                                             ]}
                                         />
                                         <Dropdown 
-                                            title={"UseCase"}
+                                            title={{ name: "UseCase" }}
                                             list={[
                                                 {
                                                     name: "Revenue Health Modal"
-
                                                 },
                                                 {
                                                     name: "Forecast Integrity"
@@ -66,7 +65,9 @@ const Header = () => {
                                             ]}
                                         />
                                         <Dropdown 
-                                            title={"Resources"}
+                                            title={{
+                                                name: "Resources"}
+                                            }
                                             list={[
                                                 {
                                                     name: "Blog"
@@ -84,7 +85,10 @@ const Header = () => {
                                         {
                                             login ?
                                                 <Dropdown 
-                                                    title={user.username}
+                                                    title={{
+                                                        name:user.username,
+                                                        avatar: "ssss"
+                                                    }}
                                                     list={[
                                                         {
                                                             name: "Password Reset",

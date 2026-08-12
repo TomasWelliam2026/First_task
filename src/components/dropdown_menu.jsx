@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 const { forwardRef, useImperativeHandle } = React;
 
 const DropdownMenu = forwardRef((props, ref) => {
-    const { list, expand } = props ;
+    const { list } = props ;
 
     const navigator = useNavigate() ;
     const [open, setOpen] = useState(false) ;
@@ -16,24 +16,26 @@ const DropdownMenu = forwardRef((props, ref) => {
         }
     }))
 
-    useEffect(() => {
+    const initial = async () => {
         let maxLen = 0 ;
         for(let i=0; i<list.length; i++) {
-            if( maxLen < list[i].length ) {
-                maxLen = list[i].length ;
+            if( maxLen < list[i].name.length ) {
+                maxLen = list[i].name.length ;
             }
         }
-        setLen(maxLen) ;
-
+        await setLen(maxLen) ;
+    }
+    useEffect(() => {
+        initial() ;
     }, []);
 
     return (
         <div className="absolute z-99 flex flex-col justify-start bg-white rounded-md drop-shadow-lg top-[62px] left-0"
-            ref={ref}
             style={{
                 display: ( open ? "flex" : "none" ),
-                width: (len*9 + 500/len)+"px"
+                width: `${len*9 + 500/len}px`
             }}
+            ref={ref}
         >
             {
                 list && list.map((item, index) => (

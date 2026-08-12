@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router';
 import { toast } from "react-toastify";
 
@@ -27,12 +27,8 @@ const ResetPage = () => {
 
         try {
             const res:any = await authService.Update( formData.origin, formData.newPassword, formData.confirmPassword );
-            if( res.data.code === 200 ) {
-                toast.success(res.data.msg) ;
-                navigator('/signin') ;
-            } else {
-                toast.error(res.data.msg) ;
-            }
+            if( res.data.code === 200 ) toast.success(res.data.msg) ;
+            else toast.error(res.data.msg) ;
         } catch (error) {
             console.log(error);
         } finally {
@@ -86,13 +82,13 @@ const ResetPage = () => {
                         <button type="submit" className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
                             {loading ? "Logging in..." : "Update"}
                         </button>
-                        <button className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}
+                        <div className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] "
                             onClick={() => {
                                 navigator('/')
                             }}
                         >
-                            {loading ? "Logging in..." : "Cancel"}
-                        </button>
+                            Cancel
+                        </div>
                     </div>
                 </div>
             </form>

@@ -7,3 +7,7 @@
   ssh-keygen -t ed25519 -C "tomas.welliam2004@outlook.com"
 # Connecting SSH key
   cat ~/.ssh/id_ed25519.pub
+
+
+# closing already running port 
+  npx kill-port 3000

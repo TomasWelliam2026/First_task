@@ -16,7 +16,7 @@ const Dropdown = (props) => {
                     drop.current.handleOpen()
                 }}
             >
-                {title}
+                {title.name}
                 <select className='w-0 sm:w-[7.18px] md:w-[14.39px] m-[4px] sm:m-[10px] md:m-[20px] ml-0 flex absolute top-0 bottom-0 right-0 items-left' disabled></select>
                 <DropdownMenu
                     ref={drop}

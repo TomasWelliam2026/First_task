@@ -26,7 +26,6 @@ const SignInPage = () => {
 
         try {
             const res:any = await SignIn(formData.email, formData.password);
-            console.log(res) ;
             if( res.code === 200 ) {
                 toast.success(`"${res.userData.username}" signed in`) ;
                 navigator('/') ;
