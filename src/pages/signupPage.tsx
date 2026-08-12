@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
-import AuthContext from "../context";
 import { useNavigate } from "react-router-dom";
+import authService from "../services/auth";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
     const [formData, setFormData] = useState({
@@ -10,7 +11,6 @@ const SignUpPage = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const { SignUp } = useContext(AuthContext);
     const navigator = useNavigate();
 
     const handleChange = (e:any) => {
@@ -25,9 +25,15 @@ const SignUpPage = () => {
         setLoading(true);
 
         try {
-            const res = await SignUp(formData.email, formData.password);
-            console.log(res) ;
-            navigator('/signin');
+            const res = await authService.SignUp(formData.username, formData.email, formData.password);
+            if( res.status === 200 ) {
+                navigator('/signin');
+                toast.success(res.data.msg) ;
+                console.log(res) ;
+            } else {
+                toast.error(res.data.msg) ;
+            }
+            
         } catch (error) {
             console.log(error);
         } finally {

@@ -9,17 +9,18 @@ class AuthService {
         this.accessToken = null; 
     }
 
-    async SignIn(username, password) {
+    async SignIn(email, password) {
         try {
-            console.log("Sign", API_BASE_URL);
             const response = await apiService.post(
                 API_BASE_URL + "/api/auth/signin",
-                { username, password }
+                { email: email, password:password }
             );
             
             if (response.data.token) {
                 const token = response.data.token;
                 return this.TokenAnalysis(token);
+            } else {
+                return "" ;
             }
         } catch (error) {
             throw error;
@@ -49,11 +50,12 @@ class AuthService {
     SignUp(username, email, password) {
         return apiService.post(
             API_BASE_URL + "/api/auth/signup",
-            { username, email, password, }
+            { username: username, email: email, password: password, }
         );
     }
 
     setToken(token) {
+        console.log(token)
         localStorage.setItem("token", token) ;
     }
 
@@ -66,17 +68,11 @@ class AuthService {
     TokenAnalysis(token) {
 
         try {
-            console.log(token)
             const decoded = jwtDecode(token);
-
-            const currentTime = Date.now() / 1000;
-            if (decoded.exp > currentTime) return false;
 
             return {
                 username: decoded.username,
                 email: decoded.email,
-                exp: decoded.exp,
-                iat: decoded.iat,
             };
         } catch (error) {
             console.error("Token decode error:", error);

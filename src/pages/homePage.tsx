@@ -4,13 +4,7 @@ import authService from "../services/auth";
 
 const HomePage = () => {
 
-    const apiTest = async () => {
-        const rlt:any = await authService.ApiTester() ;
-        console.log(rlt.data.msg) ;
-    }
-
     useEffect(() => {
-        apiTest() ;
     },[]) ;
 
     return (

@@ -6,6 +6,7 @@ const AuthContext = createContext() ;
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({});
+    const [login, setLogin] = useState(false) ;
     const [loading, setLoading] = useState(true);
 
     const initializeAuth = async () => {
@@ -21,20 +22,18 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => {
-        initializeAuth();
-    }, []);
-
-    const SignIn = async (username, password) => {
+    const SignIn = async (email, password) => {
         try {
-            const userData = await AuthService.SignIn(username, password);
+            const userData = await AuthService.SignIn(email, password);
             setUser(userData);
+            setLogin(true) ;
+
             return userData;
         } catch (error) {
             throw error;
         }
     };
-
+    
     const SignOut = async () => {
         try {
             await AuthService.SignOut() ;
@@ -45,8 +44,17 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    useEffect(() => {
+        initializeAuth();
+    }, []);
+
+    useEffect(() => {
+
+    }, [login]) ;
+
     const value = {
         user,
+        login,
         SignIn,
         SignOut,
         loading,

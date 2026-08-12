@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from 'react-router';
 import AuthContext from "../context";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
     const [formData, setFormData] = useState({
@@ -24,9 +25,13 @@ const SignInPage = () => {
         setLoading(true);
 
         try {
-            const res = await SignIn(formData.email, formData.password);
-            console.log(res) ;
-
+            const userData:any = await SignIn(formData.email, formData.password);
+            if( userData ) {
+                toast.success(`"${userData.username}" signed in`) ;
+                navigator('/') ;
+            } else {
+                toast.error("Sign In failure!") ;
+            }
         } catch (error) {
             console.log(error);
         } finally {

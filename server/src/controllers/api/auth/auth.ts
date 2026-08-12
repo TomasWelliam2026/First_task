@@ -8,11 +8,11 @@ import { secretOrKey } from '../../../config/config';
 import * as Constants from '../../../config/messages' ;
 
 export const SignUp = async (req:any, res:any) => {
-    const { name, password, email } = req.body ;
+    const { username, password, email } = req.body ;
 
     const userRepository = AppDataSource.getRepository<User>(UserEntity) ;
     const newUser = {
-        username: name,
+        username: username,
         password: await bcrypt.hash(password, 10),
         email: email
     }

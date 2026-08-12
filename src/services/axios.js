@@ -27,6 +27,7 @@ apiService.interceptors.request.use(
 apiService.interceptors.response.use(
     (response) => {
         const token = response.data.token ;
+        console.log("data -> ", response.data)
         authService.setToken(token) ;
         return response;
     },
