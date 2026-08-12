@@ -1,17 +1,17 @@
 import { Response, NextFunction } from "express";
+import { secretOrKey } from "../config/config";
 import jwt from "jsonwebtoken";
 
 import { AppDataSource } from '../database/datasource' ;
 import { User, UserEntity } from '../entities/user' ;
-import { secretOrKey } from "../config/config";
 import * as Constants from '../config/messages' ;
 
 export const tokenChecking = async (req:any, res:Response, next:NextFunction) => {
-    const { Authorization } = req.headers ;
+    const { token } = req.headers ;
 
-    if( !Authorization ) return res.json({ msg: Constants.TokenFalse, code:401 }) ;
+    if( !token ) return res.json({ msg: Constants.TokenFalse, code:401 }) ;
     
-    const decode:any = jwt.verify(Authorization, secretOrKey ) ;
+    const decode:any = jwt.verify(token, secretOrKey ) ;
 
     if( !decode ) return res.json({ msg: Constants.TokenFalse, code: 401 }) ;
     
