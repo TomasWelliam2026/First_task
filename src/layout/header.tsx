@@ -1,7 +1,7 @@
 
 import Logo from '../assets/img/6a0c63265ec9ccc9e7f030dd_Riley Logo.svg'
 import Dropdown from '../components/dropdown.jsx';
-
+import authService from '../services/auth';
 const Header = () => {
 
     return (
@@ -46,7 +46,11 @@ const Header = () => {
                                         </div>
                                     </div>
                                     <div className='flex w-full justify-end items-center'>
-                                        <div className='text-[4.5px] sm:text-[8px] md:text-[14px] px-[4px] sm:px-[7px] md:px-[10px] py-[1px] sm:py-[3px] md:py-[5px] mx-[1px] sm:mx-[3px] md:mx-[5px] mr-[8px] sm:mr-[16px] md:mr-[23px] h-[16px] sm:h-[21px] md:h-[28px] text-center flex justify-center cursor-pointer hover:text-gray-500  text-gray-700 items-center '>
+                                        <div className='text-[4.5px] sm:text-[8px] md:text-[14px] px-[4px] sm:px-[7px] md:px-[10px] py-[1px] sm:py-[3px] md:py-[5px] mx-[1px] sm:mx-[3px] md:mx-[5px] mr-[8px] sm:mr-[16px] md:mr-[23px] h-[16px] sm:h-[21px] md:h-[28px] text-center flex justify-center cursor-pointer hover:text-gray-500  text-gray-700 items-center '
+                                            onClick={() => {
+                                            }
+                                            }
+                                        >
                                             Login
                                         </div>
                                         <div className='text-[4.5px] sm:text-[8px] md:text-[14px] px-[4px] sm:px-[7px] md:px-[10px] py-[1px] sm:py-[3px] md:py-[5px] mr-[8px] sm:mr-[16px] md:mr-[23px] h-[16px] sm:h-[21px] md:h-[28px] text-center cursor-pointer flex justify-center hover:text-gray-500 text-gray-700 items-center'>

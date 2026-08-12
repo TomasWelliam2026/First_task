@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 import AuthService from "../services/auth";
 
-export const AuthContext = createContext({}) ;
+const AuthContext = createContext() ;
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({});
@@ -50,7 +50,6 @@ export const AuthProvider = ({ children }) => {
         SignIn,
         SignOut,
         loading,
-        isAuthenticated: !!user && !!AuthService.getAccessToken(),
     };
 
     return (
@@ -59,3 +58,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 }
+
+export default AuthContext ;

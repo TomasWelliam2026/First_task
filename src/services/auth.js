@@ -1,7 +1,7 @@
-import axios from "axios";
 import jwtDecode from "jwt-decode";
+import apiService from "./axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080/api/auth/";
+const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080/api/auth/";
 
 class AuthService {
     constructor() {
@@ -12,14 +12,13 @@ class AuthService {
 
     async SignIn(username, password) {
         try {
-            const response = await axios.post(
-                API_URL + "/api/auth/signin",
+            const response = await apiService.post(
+                API_BASE_URL + "/api/auth/signin",
                 { username, password }
             );
             
             if (response.data.token) {
                 const token = response.data.token;
-                localStorage.setItem("token", token) ;
                 return this.TokenAnalysis(token);
             }
         } catch (error) {
@@ -31,19 +30,23 @@ class AuthService {
         this.accessToken = null;
         this.isRefreshing = false;
         this.failedQueue = [];
-
-        return axios
-            .post(API_URL + "/api/auth/SignOut")
-            .catch((error) => {
-                console.error("SignOut error:", error);
-            });
+        localStorage.removeItem("token") ;
     }
 
     SignUp(username, email, password) {
-        return axios.post(
-            API_URL + "/api/auth/signup",
+        return apiService.post(
+            API_BASE_URL + "/api/auth/signup",
             { username, email, password, }
         );
+    }
+
+    setToken(token) {
+        localStorage.setItem("token", token) ;
+    }
+    getToken() {
+        const token = localStorage.getItem("token") ;
+        if( !token ) return "" ;
+        return token ;
     }
 
     TokenAnalysis(token) {
@@ -65,14 +68,6 @@ class AuthService {
             return false;
         }
     }
-
-    async checkAuthStatus() {
-        try {
-            const token = localStorage.getItem("token") ;
-        } catch (error) {
-        }
-    }
-
 }
 
 const authService = new AuthService();
