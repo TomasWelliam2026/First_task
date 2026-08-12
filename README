@@ -1,3 +1,9 @@
-npx create-react-app First_task --template typescript
-npm i tailwindcss
-npx tailwindcss init
+# initial project
+  npx create-react-app First_task --template typescript 
+  npm i tailwindcss
+  npx tailwindcss init
+
+# Generating SSH key
+  ssh-keygen -t ed25519 -C "tomas.welliam2004@outlook.com"
+# Connecting SSH key
+  cat ~/.ssh/id_ed25519.pub
