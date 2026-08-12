@@ -1,7 +1,6 @@
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import apiService from "./axios";
-
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080/api/auth/";
+import { API_BASE_URL } from "../config/config";
 
 class AuthService {
     constructor() {
@@ -12,6 +11,7 @@ class AuthService {
 
     async SignIn(username, password) {
         try {
+            console.log("Sign", API_BASE_URL);
             const response = await apiService.post(
                 API_BASE_URL + "/api/auth/signin",
                 { username, password }
@@ -24,6 +24,19 @@ class AuthService {
         } catch (error) {
             throw error;
         }
+    }
+
+    async ApiTester() {
+        const rlt = await apiService.post(API_BASE_URL + '/api/test', {} );
+        return rlt;
+    }
+
+    initializeAuth() {
+        const token = String(this.getToken());
+        if (token) {
+            return this.TokenAnalysis(token);
+        }
+        return null;
     }
 
     SignOut() {
@@ -43,15 +56,17 @@ class AuthService {
     setToken(token) {
         localStorage.setItem("token", token) ;
     }
+
     getToken() {
         const token = localStorage.getItem("token") ;
-        if( !token ) return "" ;
+        if( token === "undefined" || token === null ) return "" ;
         return token ;
     }
 
     TokenAnalysis(token) {
 
         try {
+            console.log(token)
             const decoded = jwtDecode(token);
 
             const currentTime = Date.now() / 1000;
@@ -71,6 +86,5 @@ class AuthService {
 }
 
 const authService = new AuthService();
-authService.configureAxios();
 
 export default authService;

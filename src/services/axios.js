@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authService from './auth';
 
-const API_BASE_URL = process.env.API_BASE_URL ;
+import { API_BASE_URL } from '../config/config';
 
 const apiService = axios.create({
     baseURL: API_BASE_URL,
@@ -15,7 +15,7 @@ apiService.interceptors.request.use(
     (config) => {
         const token = authService.getToken() ;
         if (token) {
-            config.headers.token = token;
+            config.headers.Authorization = token;
         }
         return config;
     },

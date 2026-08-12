@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import dotEnv from 'dotenv';
+import cors from 'cors' ;
+
 
 import { DBconnection } from './database/datasource';
 import api from './routes';
@@ -10,6 +12,8 @@ const app = express();
 
 app.use(bodyParser.json()) ;
 app.use(bodyParser.urlencoded()) ;
+app.use(cors()) ;
+
 app.use('', api) ;
 
 const PORT = process.env.PORT || 3000 ;

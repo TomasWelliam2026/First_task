@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
     const initializeAuth = async () => {
         try {
-            const userData = await AuthService.checkAuthStatus();
+            const userData = await AuthService.initializeAuth();
 
             if (userData) setUser(userData);
 

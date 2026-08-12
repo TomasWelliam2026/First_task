@@ -1,14 +1,11 @@
 
-import Header from '../src/layout/header';
-import HomePage from './pages/homePage';
-import Footer from './layout/footer';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes';
 
 function App() {
   return (
     <>
-      <Header />
-      <HomePage />
-      <Footer />
+      <RouterProvider router={router} />
     </>
 
   );
