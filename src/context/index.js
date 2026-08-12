@@ -24,11 +24,12 @@ export const AuthProvider = ({ children }) => {
 
     const SignIn = async (email, password) => {
         try {
-            const userData = await AuthService.SignIn(email, password);
-            setUser(userData);
-            setLogin(true) ;
-
-            return userData;
+            const res = await AuthService.SignIn(email, password);
+            if( res.userData.code === 200 ) {
+                setUser(res.userData);
+                setLogin(true) ;
+            }
+            return res ;
         } catch (error) {
             throw error;
         }
@@ -37,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     const SignOut = async () => {
         try {
             await AuthService.SignOut() ;
+            setLogin(false) ;
         } catch (error) {
             console.error("Logout error:", error);
         } finally {

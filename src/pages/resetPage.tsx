@@ -1,12 +1,12 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import authService from "../services/auth";
+import { useState, useContext, useEffect } from "react";
+import { useNavigate } from 'react-router';
 import { toast } from "react-toastify";
 
-const SignUpPage = () => {
+import authService from "../services/auth";
+
+const ResetPage = () => {
     const [formData, setFormData] = useState({
-        username: "",
-        email: "",
+        origin: "",
         newPassword: "",
         confirmPassword: ""
     });
@@ -26,15 +26,13 @@ const SignUpPage = () => {
         setLoading(true);
 
         try {
-            const res = await authService.SignUp(formData.username, formData.email, formData.newPassword, formData.confirmPassword);
+            const res:any = await authService.Update( formData.origin, formData.newPassword, formData.confirmPassword );
             if( res.data.code === 200 ) {
-                navigator('/signin');
                 toast.success(res.data.msg) ;
-                console.log(res) ;
+                navigator('/signin') ;
             } else {
                 toast.error(res.data.msg) ;
             }
-            
         } catch (error) {
             console.log(error);
         } finally {
@@ -45,38 +43,25 @@ const SignUpPage = () => {
     return (
         <div className="w-full h-[450px] sm:h-[600px] md:h-[750px] flex justify-center items-center">
             <form onSubmit={handleSubmit} className="w-[300px] sm:w-[400px] md:w-[500px] flex flex-col justify-between items-center border rounded-md shadow-md">
-                <h2 className="w-full text-3xl font-bold pt-[20px] sm:pt-[40px] md:pt-[60px] pb-4 text-center bg-gray-200">Sign Up</h2>
+                <h2 className="w-full text-3xl font-bold pt-[20px] sm:pt-[40px] md:pt-[60px] pb-4 text-center bg-gray-200">Password Reset</h2>
                 <div className="px-[20px] sm:px-[40px] md:px-[60px] pb-[20px] sm:pb-[40px] md:pb-[60px] flex flex-col justify-between items-center text-center w-full ">
                     <div className="form-group flex justify-between items-center w-full my-3 mt-6">
-                        <label htmlFor="username">Username:</label>
+                        <label htmlFor="email">Origin Password</label>
                         <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your username"
-                            type="text"
-                            id="username"
+                            className="w-7/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none text-sm  text-black" placeholder="Enter current password"
+                            type="password"
+                            id="origin"
                             autoComplete={"off"}
-                            name="username"
-                            value={formData.username}
+                            name="origin"
+                            value={formData.origin}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="form-group flex justify-between items-center w-full my-3">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="password">New Password:</label>
                         <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your email"
-                            type="email"
-                            id="email"
-                            autoComplete={"off"}
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group flex justify-between items-center w-full my-3">
-                        <label htmlFor="password">Password:</label>
-                        <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your password"
+                            className="w-7/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none text-sm text-black" placeholder="Enter your new password"
                             type="password"
                             id="newPassword"
                             name="newPassword"
@@ -97,25 +82,22 @@ const SignUpPage = () => {
                             required
                         />
                     </div>
-                    <div className="w-full flex justify-between items-center my-4 mb-0">
-                        <p className="text-[16px] font-bold tracking-[0px] text-gray-500 cursor-pointer  items-center underline"
+                    <div className="w-full h-full flex justify-between items-center my-4 mb-0">
+                        <button type="submit" className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
+                            {loading ? "Logging in..." : "Update"}
+                        </button>
+                        <button className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}
                             onClick={() => {
-                                navigator('/signin');
+                                navigator('/')
                             }}
-                        >Sign In ...</p>
-                        <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]" disabled={loading}>
-                            {loading ? "Creating account..." : "Sign Up"}
+                        >
+                            {loading ? "Logging in..." : "Cancel"}
                         </button>
                     </div>
-                    <p className="text-[16px] font-bold tracking-[0px] text-gray-400 cursor-pointer mt-[25px]  items-center underline"
-                        onClick={() => {
-                            navigator('/');
-                        }}
-                    >Go to home</p>
                 </div>
             </form>
         </div>
     );
 };
 
-export default SignUpPage;
+export default ResetPage;

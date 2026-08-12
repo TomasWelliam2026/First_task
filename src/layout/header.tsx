@@ -8,7 +8,7 @@ import AuthContext from '../context';
 const Header = () => {
     const navigator = useNavigate();
 
-    const { login, user } = useContext(AuthContext) ;
+    const { login, user, SignOut } = useContext(AuthContext) ;
 
     useEffect(() => {
 
@@ -29,26 +29,51 @@ const Header = () => {
                                         <Dropdown 
                                             title={"Team"}
                                             list={[
-                                                "Revenue & Finace",
-                                                "Marketing",
-                                                "Product",
-                                                "Reserch & Insights"
+                                                {
+                                                    name:"Revenue & Finace"
+                                                },
+                                                {
+                                                    name: "Marketing"
+
+                                                },
+                                                {
+                                                    name: "Product"
+
+                                                },
+                                                {
+                                                    name: "Reserch & Insights"
+                                                }
                                             ]}
                                         />
                                         <Dropdown 
                                             title={"UseCase"}
                                             list={[
-                                                "Revenue Health Modal",
-                                                "Forecast Integrity",
-                                                "Discover Revenue Drivers",
-                                                "Revenue Intervention Signals"
+                                                {
+                                                    name: "Revenue Health Modal"
+
+                                                },
+                                                {
+                                                    name: "Forecast Integrity"
+                                                    
+                                                },
+                                                {
+                                                    name: "Discover Revenue Drivers"
+
+                                                },
+                                                {
+                                                    name: "Revenue Intervention Signals"
+                                                }
                                             ]}
                                         />
                                         <Dropdown 
                                             title={"Resources"}
                                             list={[
-                                                "Blog",
-                                                "Release Notes"
+                                                {
+                                                    name: "Blog"
+                                                },
+                                                {
+                                                    name: "Release Notes"
+                                                }
                                             ]}
                                         />
                                         <div className='text-[4.5px] sm:text-[8px] md:text-[14px] p-[4px] sm:p-[10px] md:p-[20px] pr-[8px] sm:pr-[20px] md:pr-[40px] flex justify-center text-gray-600 items-center relative text-center cursor-pointer'>
@@ -60,17 +85,15 @@ const Header = () => {
                                             login ?
                                                 <Dropdown 
                                                     title={user.username}
-                                                    expand={[
+                                                    list={[
                                                         {
                                                             name: "Password Reset",
-                                                            url: "/reset"
+                                                            link: "/update"
                                                         },
                                                         {
                                                             name: "Sign Out",
-                                                            url: ""
+                                                            request: SignOut
                                                         }
-                                                        
-                                                        
                                                     ]}
                                                 />
                                             :  

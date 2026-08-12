@@ -18,11 +18,6 @@ app.use('', api) ;
 
 const PORT = process.env.PORT || 3000 ;
 
-
-app.post('/api/test', (req: Request, res: Response) => {
-  return res.json({ msg: "Hello!, I'm backend" }) ;
-});
-
 DBconnection() ;
 
 app.listen(PORT, () => {

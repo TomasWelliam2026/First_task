@@ -4,6 +4,7 @@ import RouterLayout from "../layout";
 import HomePage from "../pages/homePage";
 import SignInPage from "../pages/signinPage";
 import SignUpPage from "../pages/signupPage";
+import ResetPage from "../pages/resetPage";
 
 const routes = [
     {
@@ -23,6 +24,10 @@ const routes = [
     {
         path: '/signup',
         element: <SignUpPage />
+    },
+    {
+        path: '/update',
+        element: <ResetPage />
     }
 ];
 

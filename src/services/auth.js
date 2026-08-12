@@ -15,21 +15,23 @@ class AuthService {
                 API_BASE_URL + "/api/auth/signin",
                 { email: email, password:password }
             );
-            
+            console.log(response)
             if (response.data.token) {
-                const token = response.data.token;
-                return this.TokenAnalysis(token);
+                const userData = this.TokenAnalysis(response.data.token);
+                return {
+                    code: response.data.code,
+                    userData: userData,
+                    msg: response.data.msg
+                } ;
             } else {
-                return "" ;
+                return {
+                    code: response.data.code,
+                    msg: response.data.msg
+                } ;
             }
         } catch (error) {
             throw error;
         }
-    }
-
-    async ApiTester() {
-        const rlt = await apiService.post(API_BASE_URL + '/api/test', {} );
-        return rlt;
     }
 
     initializeAuth() {
@@ -47,10 +49,17 @@ class AuthService {
         localStorage.removeItem("token") ;
     }
 
-    SignUp(username, email, password) {
+    SignUp(username, email, newPassword, confirmPassword) {
         return apiService.post(
             API_BASE_URL + "/api/auth/signup",
-            { username: username, email: email, password: password, }
+            { username: username, email: email, newPassword: newPassword, confirmPassword: confirmPassword }
+        );
+    }
+
+    Update(origin, newPassword, confirmPassword) {
+        return apiService.post(
+            API_BASE_URL + "/api/auth/reset",
+            { origin: origin, newPassword: newPassword, confirmPassword: confirmPassword }
         );
     }
 

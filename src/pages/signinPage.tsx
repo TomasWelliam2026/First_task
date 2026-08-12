@@ -25,12 +25,13 @@ const SignInPage = () => {
         setLoading(true);
 
         try {
-            const userData:any = await SignIn(formData.email, formData.password);
-            if( userData ) {
-                toast.success(`"${userData.username}" signed in`) ;
+            const res:any = await SignIn(formData.email, formData.password);
+            console.log(res) ;
+            if( res.code === 200 ) {
+                toast.success(`"${res.userData.username}" signed in`) ;
                 navigator('/') ;
             } else {
-                toast.error("Sign In failure!") ;
+                toast.error(res.msg) ;
             }
         } catch (error) {
             console.log(error);
