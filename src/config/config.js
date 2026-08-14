@@ -1,3 +1,2 @@
 
-
-export const API_BASE_URL = `http://${ process.env.SERVER_HOST }${process.env.PORT}`;
+export const API_BASE_URL = "http://172.20.1.13:5000";

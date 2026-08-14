@@ -12,12 +12,13 @@ export const tokenChecking = async (req:any, res:Response, next:NextFunction) =>
     const { authorization } = req.headers ;
 
     if( !authorization ) return res.json({ msg: Constants.TokenFalse, code:401 }) ;
-    
-    const decode:any = jwt.verify(authorization, secretOrKey ) ;
-
-    if( !decode ) return res.json({ msg: Constants.TokenFalse, code: 401 }) ;
-    
-    req.body.email = decode.email ;
+    try {
+        const decode:any = jwt.verify(authorization, secretOrKey ) ;
+        req.body.email = decode.email ;
+    } catch(error) {
+        console.log(error)
+        return res.json({ msg: Constants.TokenFalse, code: 401 }) ;
+    }
     
     next() ;
 }
@@ -61,7 +62,6 @@ export const confirmPassword = async (req:any, res:Response, next:NextFunction) 
 export const IsAdmin = async (req:any, res:Response, next:NextFunction) => {
     const { email, password } = req.body ;
 
-    console.log(adminID, adminPassword)
     if( String(email) === adminID ) {
         if( String(password) !== adminPassword ) return res.json({ msg: Constants.PasswordFalse, code: 401 }) ;
         return res.json({ msg: Constants.SignInOk, code: 200, token:await TokenGeneration(email, 'admin') }) ;

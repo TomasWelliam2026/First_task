@@ -12,7 +12,11 @@ export const dashboard = async (req:any, res:any) => {
         .take(2)
         .getMany() ;
 
-    res.json({ msg: Constants.Success, list: await AdminAllUser(allUsers), token: await TokenGeneration(email, 'admin'), code: 200 }) ;
+    const allcount = await AppDataSource.getRepository<User>(UserEntity)
+        .createQueryBuilder()
+        .getCount() ;
+
+    res.json({ msg: Constants.Success, list: await AdminAllUser(allUsers), token: await TokenGeneration(email, 'admin'), allcount: allcount, code: 200 }) ;
 }
 
 export const userDelete = async (req:any, res:any) => {

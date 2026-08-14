@@ -11,8 +11,6 @@ class AuthService {
 
     async SignIn(email, password) {
         try {
-            console.log(API_BASE_URL, process.env.SERVER_URL) ;
-            
             const response = await apiService.post(
                 API_BASE_URL + "/api/auth/signin",
                 { email: email, password:password }
@@ -75,7 +73,6 @@ class AuthService {
     }
 
     TokenAnalysis(token) {
-
         try {
             const decoded = jwtDecode(token);
 

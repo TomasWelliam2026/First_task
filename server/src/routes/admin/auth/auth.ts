@@ -7,6 +7,6 @@ const router = express() ;
 
 router.post("/users", tokenChecking, IsAdminRequest, dashboard ) ;
 
-router.delete("/users", tokenChecking, IsAdminRequest, userDelete ) ;
+router.post("/users/delete", tokenChecking, IsAdminRequest, userDelete ) ;
 
 export default router ;

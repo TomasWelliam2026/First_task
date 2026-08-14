@@ -11,8 +11,10 @@ export const AuthProvider = ({ children }) => {
     const initializeAuth = async () => {
         try {
             const userData = await AuthService.initializeAuth();
-
-            if (userData) setUser(userData);
+            if (userData) {
+                setUser(userData);
+                setLogin(true) ;
+            }
 
         } catch (error) {
             console.error("Auth initialization error:", error);
@@ -24,6 +26,7 @@ export const AuthProvider = ({ children }) => {
     const SignIn = async (email, password) => {
         try {
             const res = await AuthService.SignIn(email, password);
+            console.log(res) ;
             if( res.code === 200 ) {
                 setUser(res.userData);
                 setLogin(true) ;

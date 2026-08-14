@@ -5,6 +5,7 @@ import HomePage from "../pages/user/homePage";
 import SignInPage from "../pages/user/signinPage";
 import SignUpPage from "../pages/user/signupPage";
 import ResetPage from "../pages/user/resetPage";
+import AdminHomePage from "../pages/admin/homePage";
 
 const routes = [
     {
@@ -28,6 +29,16 @@ const routes = [
     {
         path: '/update',
         element: <ResetPage />
+    },
+    {
+        path: '/admin',
+        element: <RouterLayout />,
+        children: [
+            {
+                index: true ,
+                element: <AdminHomePage />
+            }
+        ]
     }
 ];
 

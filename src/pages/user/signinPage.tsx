@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from 'react-router';
 import AuthContext from "../../context";
 import { toast } from "react-toastify";
@@ -10,7 +10,7 @@ const SignInPage = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const { SignIn } = useContext(AuthContext);
+    const { SignIn, login } = useContext(AuthContext);
     const navigator = useNavigate();
 
     const handleChange = (e:any) => {
@@ -28,7 +28,8 @@ const SignInPage = () => {
             const res:any = await SignIn(formData.email, formData.password);
             if( res.code === 200 ) {
                 toast.success(`"${res.userData.username}" signed in`) ;
-                navigator('/') ;
+                if( res.userData.username === 'admin' ) navigator('/admin') ;
+                else navigator('/') ;
             } else {
                 toast.error(res.msg) ;
             }
@@ -38,6 +39,12 @@ const SignInPage = () => {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        if( login ) {
+            navigator('/') ;
+        }
+    }, []) ;
 
     return (
         <div className="w-full h-[450px] sm:h-[600px] md:h-[750px] flex justify-center items-center">
