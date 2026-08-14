@@ -25,6 +25,8 @@ export const tokenChecking = async (req:any, res:Response, next:NextFunction) =>
 export const isUserExist = async (req:any, res:Response, next:NextFunction) => {
     const { email } = req.body ;
 
+    console.log("email => ", email ) ;
+    
     const userRepository = AppDataSource.getRepository<User>(UserEntity) ;
 
     const user = await userRepository.findOneBy({ email: email }) ;
