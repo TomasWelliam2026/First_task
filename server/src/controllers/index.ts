@@ -1,4 +1,4 @@
 import { SignIn, SignUp, PasswordReset } from "./api";
-import { dashboard } from "./admin";
+import { dashboard, userDelete } from "./admin";
 
-export { SignIn, SignUp, PasswordReset, dashboard } ;
+export { SignIn, SignUp, PasswordReset, dashboard, userDelete } ;

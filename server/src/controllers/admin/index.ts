@@ -1,3 +1,3 @@
-import { dashboard } from "./auth/auth";
+import { dashboard, userDelete } from "./auth/auth";
 
-export { dashboard } ;
+export { dashboard, userDelete } ;
