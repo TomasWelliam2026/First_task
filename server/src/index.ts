@@ -1,11 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotEnv from 'dotenv';
 import cors from 'cors' ;
 
 
 import { DBconnection } from './database/datasource';
 import api from './routes';
 
+dotEnv.config() ;
 const app = express();
 
 app.use(bodyParser.json()) ;
@@ -14,7 +16,7 @@ app.use(cors()) ;
 
 app.use('', api) ;
 
-const PORT = 4111 ;
+const PORT = process.env.PORT ;
 
 DBconnection() ;
 

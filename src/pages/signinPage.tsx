@@ -69,8 +69,8 @@ const SignInPage = () => {
                             required
                         />
                     </div>
-                    <div className="w-full h-full flex justify-between items-center my-4 mb-0">
-                        <div className="w-full flex">
+                    <div className="w-full h-full flex justify-center items-center my-4">
+                        <div className="w-full flex justify-center">
                             <p className="text-[16px] tracking-[0px] text-gray-500 flex items-center">No account?</p>
                             <p className="text-[16px] font-bold tracking-[0px] text-gray-500 cursor-pointer ml-[20px]  items-center underline"
                                 onClick={() => {
@@ -78,10 +78,10 @@ const SignInPage = () => {
                                 }}
                             >Create one!</p>
                         </div>
-                        <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
-                            {loading ? "Logging in..." : "Sign In"}
-                        </button>
                     </div>
+                    <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
+                        {loading ? "Logging in..." : "Sign In"}
+                    </button>
                     <p className="text-[16px] font-bold tracking-[0px] text-gray-400 cursor-pointer mt-[25px]  items-center underline"
                         onClick={() => {
                             navigator('/');

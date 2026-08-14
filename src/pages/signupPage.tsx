@@ -49,7 +49,7 @@ const SignUpPage = () => {
                     <div className="form-group flex justify-between items-center w-full my-3 mt-6">
                         <label htmlFor="username">Username:</label>
                         <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your username"
+                            className="w-7/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your username"
                             type="text"
                             id="username"
                             autoComplete={"off"}
@@ -62,7 +62,7 @@ const SignUpPage = () => {
                     <div className="form-group flex justify-between items-center w-full my-3">
                         <label htmlFor="email">Email:</label>
                         <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your email"
+                            className="w-7/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your email"
                             type="email"
                             id="email"
                             autoComplete={"off"}
@@ -75,7 +75,7 @@ const SignUpPage = () => {
                     <div className="form-group flex justify-between items-center w-full my-3">
                         <label htmlFor="password">Password:</label>
                         <input
-                            className="w-9/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your password"
+                            className="w-7/12 h-[32px] border border-gray-300 rounded-md py-[8px] px-[14px] focus:outline-none  text-black" placeholder="Enter your password"
                             type="password"
                             id="newPassword"
                             name="newPassword"
@@ -96,17 +96,17 @@ const SignUpPage = () => {
                             required
                         />
                     </div>
-                    <div className="w-full flex justify-between items-center my-4 mb-0">
-                        <p className="text-[16px] font-bold tracking-[0px] text-gray-500 cursor-pointer  items-center underline"
-                            onClick={() => {
-                                navigator('/signin');
-                            }}
-                        >Sign In ...</p>
+                    <div className="w-full flex flex-col justify-between items-center my-4">
                         <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]" disabled={loading}>
                             {loading ? "Creating account..." : "Sign Up"}
                         </button>
                     </div>
-                    <p className="text-[16px] font-bold tracking-[0px] text-gray-400 cursor-pointer mt-[25px]  items-center underline"
+                    <p className="text-[16px] font-bold tracking-[0px] text-gray-500 cursor-pointer  items-center underline"
+                        onClick={() => {
+                            navigator('/signin');
+                        }}
+                    >Sign In ...</p>
+                    <p className="text-[16px] font-bold tracking-[0px] text-gray-400 cursor-pointer mt-[15px]  items-center underline"
                         onClick={() => {
                             navigator('/');
                         }}

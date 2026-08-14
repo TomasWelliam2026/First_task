@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Img1, Img2, section2Img1, section2Img2, section2Img3, section2Img4, section2Img5, section2Img6, section2Img7, section2Img8, section2Img9, section2Img10, section2Img11, section2Img12, section2Img13, section2Img14, section2Img15 } from "../assets/img";
-import authService from "../services/auth";
+import { Link } from "react-router";
 
 const HomePage = () => {
 
@@ -18,12 +18,16 @@ const HomePage = () => {
                             <p className="text-[5px] sm:text-[9px] md:text-[18px] leading-[8px] sm:leading-[16px] md:leading-[32px]">Riley continuously detects churn risk, forecast changes, and expansion opportunities across your GTM signals, before they appear in dashboards.</p>
                         </div>
                         <div className="w-[90px] sm:w-[181px] md:w-[362px] h-[26px] sm:h-[52px] md:h-[104px] flex flex-col justify-between">
-                            <div className="text-[4px] sm:text-[8px] md:text-[16px] leading-[6px] sm:leading-[12px] md:leading-[24px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer bg-gray-800 rounded-lg text-white  text-center ">
+                            <Link className="text-[4px] sm:text-[8px] md:text-[16px] leading-[6px] sm:leading-[12px] md:leading-[24px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer bg-gray-800 hover:bg-gray-600 rounded-lg text-white  text-center "
+                                to={"https://app.askriley.io/signup"}
+                            >
                                 Start Trial
-                            </div>
-                            <div className="text-[4px] sm:text-[8px] md:text-[16px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer text-gray-800 text-center ">
+                            </Link>
+                            <Link className="text-[4px] sm:text-[8px] md:text-[16px] px-[8px] sm:px-[16px] md:px-[32px] py-[3px] sm:py-[6px] md:py-[12px] w-full cursor-pointer text-gray-800 text-center hover:text-gray-900"
+                                to={"https://calendly.com/arlene-rangel-askriley/30min"}
+                            >
                                 See how it works
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="w-[180px] sm:w-[361px] md:w-[722.22px] h-[125px] sm:h-[250px] md:h-[500px] flex relative"> 
@@ -196,9 +200,11 @@ const HomePage = () => {
                 <section className="w-full flex bg-test px-[30px] pt-[50px] pb-[80px]">
                     <div className="w-[768px] h-[656px] flex mx-auto">
                         <div className="w-full h-full flex flex-col text-center py-[112px]">
-                            <div className="text-[64px] leading-[72px] mt-[20px] mb-[10px] text-sky-950">
+                            <Link className="text-[64px] leading-[72px] mt-[20px] mb-[10px] text-sky-950"
+                                to={"/post/achieving-soc-2-compliance-how-riley-protects-your-data"}
+                            >
                                 Discover your hidden growth drivers
-                            </div>
+                            </Link>
                             <div className="w-[500px] h-[154px] flex flex-col justify-center mx-[134px] mt-[40px] mb-[64px]">
                                 <input className="w-full h-[52px] border border-gray-300 rounded-md py-[8px] px-[14px] mb-[32px] focus:outline-none  text-black" placeholder="Enter your email" />
                                 <div className="w-full h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]">
