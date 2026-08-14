@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
 
 import RouterLayout from "../layout";
-import HomePage from "../pages/homePage";
-import SignInPage from "../pages/signinPage";
-import SignUpPage from "../pages/signupPage";
-import ResetPage from "../pages/resetPage";
+import HomePage from "../pages/user/homePage";
+import SignInPage from "../pages/user/signinPage";
+import SignUpPage from "../pages/user/signupPage";
+import ResetPage from "../pages/user/resetPage";
 
 const routes = [
     {

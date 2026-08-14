@@ -1,6 +1,6 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from 'react-router';
-import AuthContext from "../context";
+import AuthContext from "../../context";
 import { toast } from "react-toastify";
 
 const SignInPage = () => {
@@ -80,7 +80,16 @@ const SignInPage = () => {
                         </div>
                     </div>
                     <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
-                        {loading ? "Logging in..." : "Sign In"}
+                        {loading ? 
+                            <p style={{
+                                display: "-webkit-box",
+                                overflow: "hidden",
+                                WebkitBoxOrient: "vertical",
+                                WebkitLineClamp: "1"
+                            }}
+                        >Logging In..."</p> 
+                        : 
+                        "Sign In"}
                     </button>
                     <p className="text-[16px] font-bold tracking-[0px] text-gray-400 cursor-pointer mt-[25px]  items-center underline"
                         onClick={() => {

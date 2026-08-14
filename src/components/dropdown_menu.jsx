@@ -25,6 +25,7 @@ const DropdownMenu = forwardRef((props, ref) => {
         }
         await setLen(maxLen) ;
     }
+    
     useEffect(() => {
         initial() ;
     }, []);

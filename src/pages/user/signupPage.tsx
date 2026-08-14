@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import authService from "../services/auth";
+import authService from "../../services/auth";
 import { toast } from "react-toastify";
 
 const SignUpPage = () => {
@@ -97,8 +97,17 @@ const SignUpPage = () => {
                         />
                     </div>
                     <div className="w-full flex flex-col justify-between items-center my-4">
-                        <button type="submit" className="w-1/2 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px]" disabled={loading}>
-                            {loading ? "Creating account..." : "Sign Up"}
+                        <button type="submit" className="w-1/2 h-[48px] bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] line-clamp-1"  disabled={loading}>
+                            {loading ? 
+                                <p style={{
+                                    display: "-webkit-box",
+                                    overflow: "hidden",
+                                    WebkitBoxOrient: "vertical",
+                                    WebkitLineClamp: "1"
+                                }}
+                            >Creating account..."</p> 
+                            : 
+                            "Sign Up"}
                         </button>
                     </div>
                     <p className="text-[16px] font-bold tracking-[0px] text-gray-500 cursor-pointer  items-center underline"

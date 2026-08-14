@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from 'react-router';
 import { toast } from "react-toastify";
 
-import authService from "../services/auth";
+import authService from "../../services/auth";
 
 const ResetPage = () => {
     const [formData, setFormData] = useState({
@@ -80,7 +80,16 @@ const ResetPage = () => {
                     </div>
                     <div className="w-full h-full flex justify-between items-center my-4 mb-0">
                         <button type="submit" className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] " disabled={loading}>
-                            {loading ? "Logging in..." : "Update"}
+                            {loading ? 
+                                <p style={{
+                                    display: "-webkit-box",
+                                    overflow: "hidden",
+                                    WebkitBoxOrient: "vertical",
+                                    WebkitLineClamp: "1"
+                                }}
+                            >Updating..."</p> 
+                            : 
+                            "Update"}
                         </button>
                         <div className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] "
                             onClick={() => {

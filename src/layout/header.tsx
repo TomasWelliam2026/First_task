@@ -10,9 +10,16 @@ const Header = () => {
 
     const { login, user, SignOut } = useContext(AuthContext) ;
 
+    const initial = () => {
+        if( !login ) navigator('/signin') ;
+    }
     useEffect(() => {
-
+        initial() ;
     }, [login]) ;
+
+    useEffect(() => {
+        initial() ;
+    }, []);
 
     return (
         <header className='w-full h-[16px] sm:h-[32px] md:h-[64px] fixed top-0 left-0 z-40 flex justify-center'>

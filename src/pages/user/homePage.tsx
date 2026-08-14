@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Img1, Img2, section2Img1, section2Img2, section2Img3, section2Img4, section2Img5, section2Img6, section2Img7, section2Img8, section2Img9, section2Img10, section2Img11, section2Img12, section2Img13, section2Img14, section2Img15 } from "../assets/img";
+import { Img1, Img2, section2Img1, section2Img2, section2Img3, section2Img4, section2Img5, section2Img6, section2Img7, section2Img8, section2Img9, section2Img10, section2Img11, section2Img12, section2Img13, section2Img14, section2Img15 } from "../../assets/img";
 import { Link } from "react-router";
 
 const HomePage = () => {
