@@ -1,10 +1,8 @@
-import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs' ;
-import jwt from 'jsonwebtoken' ;
-import { AppDataSource } from "../../../database/datasource";
 
+import { AppDataSource } from "../../../database/datasource";
 import { User, UserEntity } from '../../../entities/user' ;
-import { secretOrKey } from '../../../config/config';
+import { TokenGeneration } from '../../../config/functions';
 import * as Constants from '../../../config/messages' ;
 
 export const SignUp = async (req:any, res:any) => {
@@ -22,7 +20,7 @@ export const SignUp = async (req:any, res:any) => {
     res.json({ msg: Constants.Success, code: 200 }) ;
 }
 
-export const SignIn = async (req:any, res:Response) => {
+export const SignIn = async (req:any, res:any) => {
     const { email, password } = req.body ;
 
     const userRepository = AppDataSource.getRepository<User>(UserEntity) ;
@@ -31,11 +29,6 @@ export const SignIn = async (req:any, res:Response) => {
 
     if( !(await bcrypt.compare(password, user.password)) ) return res.json({ msg: Constants.PasswordFalse, code: 401 }) ;
 
-    const token = await jwt.sign({
-        email: email,
-        username: user.username,
-    }, secretOrKey, { expiresIn: "1h" }) ;
-
-    res.json({ msg: Constants.SignInOk, token: token, code: 200 }) ;
+    res.json({ msg: Constants.SignInOk, token: await TokenGeneration(email, user.username), code: 200 }) ;
 }
 
