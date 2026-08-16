@@ -27,7 +27,10 @@ const ResetPage = () => {
 
         try {
             const res:any = await authService.Update( formData.origin, formData.newPassword, formData.confirmPassword );
-            if( res.data.code === 200 ) toast.success(res.data.msg) ;
+            if( res.data.code === 200 ) {
+                toast.success(res.data.msg) ;
+                navigator('/') ;
+            }
             else toast.error(res.data.msg) ;
         } catch (error) {
             console.log(error);

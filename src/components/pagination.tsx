@@ -47,7 +47,7 @@ function PaginationComponent() {
     const paginate = (pageNumber:any) => setCurrentPage(pageNumber);
 
     return (
-        <div className="relative h-[832px] w-full h-full p-4 flex flex-col justify-between">
+        <div className="h-[832px] w-full h-full p-4 flex flex-col justify-between">
             <div className="w-full flex rounded-tl-md rounded-tr-md">
                 <div className="w-full grid grid-cols-10 gap-0 h-auto justify-start">
                     <div className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0'>
