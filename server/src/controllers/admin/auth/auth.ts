@@ -8,8 +8,8 @@ export const dashboard = async (req:any, res:any) => {
 
     const allUsers = await AppDataSource.getRepository<User>(UserEntity)
         .createQueryBuilder()
-        .skip((page-1)*2)
-        .take(2)
+        .skip((page-1)*10)
+        .take(10)
         .getMany() ;
 
     const allcount = await AppDataSource.getRepository<User>(UserEntity)
@@ -20,11 +20,11 @@ export const dashboard = async (req:any, res:any) => {
 }
 
 export const userDelete = async (req:any, res:any) => {
-    const { id } = req.body ;
+    const { email, id } = req.body ;
 
     const users = await AppDataSource.getRepository<User>(UserEntity) ;
     await users.delete(id) ;
 
-    res.json({ msg: Constants.Success, code: 200 }) ;
+    res.json({ msg: Constants.Success, code: 200, token: await TokenGeneration(email, 'admin') }) ;
     
 }

@@ -6,7 +6,7 @@ function PaginationComponent() {
 
     const [todos, setTodos] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(2);
+    const [itemsPerPage] = useState(10);
     const [pageNumbers, setPageNumbers] = useState([]) ;
 
     const fetchData = async (cnt:any) => {
@@ -33,6 +33,7 @@ function PaginationComponent() {
         const res = await adminService.deleteUser(id) ;
         if( res.data.code === 200 ) {
             toast.success(res.data.msg) ;
+            fetchData(currentPage) ;
         } else {
             toast.error(res.data.msg) ;
         }
@@ -50,54 +51,50 @@ function PaginationComponent() {
     const paginate = (pageNumber:any) => setCurrentPage(pageNumber);
 
     return (
-        <div className="max-w-3xl h-full mx-auto p-4 flex flex-col justify-between">
-            <div className="grid grid-cols-4 gap-4">
-                <table className="table-auto">
-                    <thead>
-                        <tr>
-                            <td>Id</td>
-                            <td>Username</td>
-                            <td>Email</td>
-                            <td>Operation</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            todos.map((item:any, index) => (
-                                <tr key={index}>
-                                    <td className='flex'>
-                                        <div className={` text-gray-800 p-4 rounded-sm`}>
-                                            <h2 className="text-sm font-semibold mb-2">
-                                                {item.id}
-                                            </h2>
+        <div className="relative h-[832px] w-full h-full p-4 flex flex-col justify-between">
+            <div className="w-full flex rounded-tl-md rounded-tr-md">
+                <table className="w-full grid grid-cols-10 gap-0 h-auto justify-start">
+                    <tr className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0'>
+                        <td className='... p-4 pr-0 font-bold bg-gray-200 '>Id</td>
+                        <td className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Username</td>
+                        <td className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Email</td>
+                        <td className='... p-4 pr-0 font-bold bg-gray-200  text-center'>Operation</td>
+                    </tr>
+                    {
+                        todos && todos.map((item:any, index) => (
+                            <tr key={index} className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0 '>
+                                <td className='... p-4 pr-0'>
+                                    <div className={` text-gray-800 py-2 rounded-sm`}>
+                                        <h2 className="text-sm">
+                                            {item.id}
+                                        </h2>
+                                    </div>
+                                </td>
+                                <td className='col-span-4 ... p-4 pr-0'>
+                                    <div className={` text-gray-800 py-2 rounded-sm`}>
+                                        <h2 className="text-sm ">
+                                            {item.username}
+                                        </h2>
+                                    </div>
+                                </td>
+                                <td className='col-span-4 ... p-4 pr-0'>
+                                    <div className={` text-gray-800 py-2 rounded-sm`}>
+                                        <h2 className="text-sm ">
+                                            {item.email}
+                                        </h2>
+                                    </div>
+                                </td>
+                                <td className='... p-4 pr-0 flex items-center' >
+                                    <div className="flex w-full justify-center items-center ">
+                                        <div className="w-full text-sm text-white text-center bg-gray-600 py-2 rounded-md  cursor-pointer" onClick={() => {
+                                            deleteUser(item.id)
+                                        }}>
+                                            delete
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div className={` text-gray-800 p-4 rounded-sm`}>
-                                            <h2 className="text-sm font-semibold mb-2">
-                                                {item.username}
-                                            </h2>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div className={` text-gray-800 p-4 rounded-sm`}>
-                                            <h2 className="text-sm font-semibold mb-2">
-                                                {item.email}
-                                            </h2>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div className={` text-gray-800 p-4 rounded-sm`}>
-                                            <div className="text-sm font-semibold cursor-pointer mb-2" onClick={() => {
-                                                deleteUser(item.id)
-                                            }}>
-                                                delete
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                        ))}
-                    </tbody>
+                                    </div>
+                                </td>
+                            </tr>
+                    ))}
                 </table>
             </div>
             <ul className="flex gap-2 justify-center flex-wrap mt-8">

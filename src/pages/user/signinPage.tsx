@@ -10,7 +10,7 @@ const SignInPage = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const { SignIn, login } = useContext(AuthContext);
+    const { SignIn, login, user } = useContext(AuthContext);
     const navigator = useNavigate();
 
     const handleChange = (e:any) => {
@@ -42,7 +42,8 @@ const SignInPage = () => {
 
     useEffect(() => {
         if( login ) {
-            navigator('/') ;
+            if( user.username === 'admin' ) navigator('/admin') ;
+            else navigator('/') ;
         }
     }, []) ;
 
