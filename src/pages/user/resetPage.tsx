@@ -91,7 +91,7 @@ const ResetPage = () => {
                             : 
                             "Update"}
                         </button>
-                        <div className="w-1/3 h-[48px]  bg-gray-800 rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] "
+                        <div className="w-1/3 h-[48px]  bg-gray-800 cursor-pointer rounded-lg text-white text-[16px] leading-[24px] text-center px-[32px] py-[12px] "
                             onClick={() => {
                                 navigator('/')
                             }}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import adminService from '../services/admin';
 import { toast } from 'react-toastify';
 
@@ -21,9 +21,6 @@ function PaginationComponent() {
                 pageNumberlist.push(i);
             }
             setPageNumbers(pageNumberlist) ;
-
-            console.log(pageNumberlist) ;
-
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -37,7 +34,6 @@ function PaginationComponent() {
         } else {
             toast.error(res.data.msg) ;
         }
-        console.log(res) ;
     }
 
     useEffect(() => {
@@ -53,38 +49,38 @@ function PaginationComponent() {
     return (
         <div className="relative h-[832px] w-full h-full p-4 flex flex-col justify-between">
             <div className="w-full flex rounded-tl-md rounded-tr-md">
-                <table className="w-full grid grid-cols-10 gap-0 h-auto justify-start">
-                    <tr className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0'>
-                        <td className='... p-4 pr-0 font-bold bg-gray-200 '>Id</td>
-                        <td className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Username</td>
-                        <td className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Email</td>
-                        <td className='... p-4 pr-0 font-bold bg-gray-200  text-center'>Operation</td>
-                    </tr>
+                <div className="w-full grid grid-cols-10 gap-0 h-auto justify-start">
+                    <div className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0'>
+                        <div className='... p-4 pr-0 font-bold bg-gray-200 '>Id</div>
+                        <div className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Username</div>
+                        <div className='col-span-4 ... p-4 pr-0 font-bold bg-gray-200 '>Email</div>
+                        <div className='... p-4 pr-0 font-bold bg-gray-200  text-center'>Operation</div>
+                    </div>
                     {
                         todos && todos.map((item:any, index) => (
-                            <tr key={index} className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0 '>
-                                <td className='... p-4 pr-0'>
+                            <div key={index} className='col-span-10 ... grid grid-cols-10 flex justify-between gap-0 '>
+                                <div className='... p-4 pr-0'>
                                     <div className={` text-gray-800 py-2 rounded-sm`}>
                                         <h2 className="text-sm">
                                             {item.id}
                                         </h2>
                                     </div>
-                                </td>
-                                <td className='col-span-4 ... p-4 pr-0'>
+                                </div>
+                                <div className='col-span-4 ... p-4 pr-0'>
                                     <div className={` text-gray-800 py-2 rounded-sm`}>
                                         <h2 className="text-sm ">
                                             {item.username}
                                         </h2>
                                     </div>
-                                </td>
-                                <td className='col-span-4 ... p-4 pr-0'>
+                                </div>
+                                <div className='col-span-4 ... p-4 pr-0'>
                                     <div className={` text-gray-800 py-2 rounded-sm`}>
                                         <h2 className="text-sm ">
                                             {item.email}
                                         </h2>
                                     </div>
-                                </td>
-                                <td className='... p-4 pr-0 flex items-center' >
+                                </div>
+                                <div className='... p-4 pr-0 flex items-center' >
                                     <div className="flex w-full justify-center items-center ">
                                         <div className="w-full text-sm text-white text-center bg-gray-600 py-2 rounded-md  cursor-pointer" onClick={() => {
                                             deleteUser(item.id)
@@ -92,10 +88,10 @@ function PaginationComponent() {
                                             delete
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
+                                </div>
+                            </div>
                     ))}
-                </table>
+                </div>
             </div>
             <ul className="flex gap-2 justify-center flex-wrap mt-8">
                 {

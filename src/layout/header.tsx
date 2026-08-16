@@ -34,7 +34,9 @@ const Header = () => {
                                 <div className='flex w-full'>
                                     <div className='sm:w-[416px] md:w-[716.11px] ml-[46px] sm:ml-[92.1px] md:ml-[185.234px] pl-[50px] sm:pl-[100px] md:pl-[200px] flex items-center'>
                                         {
-                                            login ? <></>
+                                            user.username === 'admin' ?
+                                            <>
+                                            </>
                                             :
                                             <>
                                                 <Dropdown 
@@ -97,18 +99,41 @@ const Header = () => {
                                     <div className='flex w-full justify-end items-center'>
                                         {
                                             login ?
-                                                <Dropdown 
-                                                    title={{
-                                                        name:user.username,
-                                                        avatar: "ssss"
-                                                    }}
-                                                    list={[
-                                                        {
-                                                            name: "Sign Out",
-                                                            request: SignOut
-                                                        }
-                                                    ]}
-                                                />
+                                                <>
+                                                {
+                                                    user.username === 'admin' ?
+                                                        <Dropdown 
+                                                            title={{
+                                                                name:user.username,
+                                                                avatar: "ssss"
+                                                            }}
+                                                            list={[
+                                                                {
+                                                                    name: "Sign Out",
+                                                                    request: SignOut
+                                                                }
+                                                            ]}
+                                                        />
+                                                    :
+                                                        <Dropdown 
+                                                            title={{
+                                                                name:user.username,
+                                                                avatar: "ssss"
+                                                            }}
+                                                            list={[
+                                                                {
+                                                                    name: "Password Reset",
+                                                                    link: "/update"
+                                                                },
+                                                                {
+                                                                    name: "Sign Out",
+                                                                    request: SignOut
+                                                                }
+                                                            ]}
+                                                        />
+                                                    }
+                                                </>
+                                                
                                             :  
                                                 <div className='text-[4.5px] sm:text-[8px] md:text-[14px] px-[4px] sm:px-[7px] md:px-[10px] py-[1px] sm:py-[3px] md:py-[5px] mx-[1px] sm:mx-[3px] md:mx-[5px] mr-[8px] sm:mr-[16px] md:mr-[23px] h-[16px] sm:h-[21px] md:h-[28px] text-center flex justify-center cursor-pointer hover:text-gray-500  text-gray-700 items-center '
                                                     onClick={() => {

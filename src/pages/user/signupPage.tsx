@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/auth";
 import { toast } from "react-toastify";
+import { SignUpValidation } from "../../validation/middleware";
 
 const SignUpPage = () => {
     const [formData, setFormData] = useState({
@@ -81,6 +82,8 @@ const SignUpPage = () => {
                             name="newPassword"
                             value={formData.newPassword}
                             onChange={handleChange}
+                            min={8}
+                            max={30}
                             required
                         />
                     </div>
@@ -93,6 +96,8 @@ const SignUpPage = () => {
                             name="confirmPassword"
                             value={formData.confirmPassword}
                             onChange={handleChange}
+                            min={8}
+                            max={30}
                             required
                         />
                     </div>

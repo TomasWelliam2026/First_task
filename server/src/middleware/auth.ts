@@ -52,8 +52,6 @@ export const NotUserExist = async (req:any, res:Response, next:NextFunction) => 
 export const confirmPassword = async (req:any, res:Response, next:NextFunction) => {
     const { newPassword, confirmPassword } = req.body ;
 
-    console.log(req.body) ;
-
     if( newPassword !== confirmPassword ) return res.json({ msg: Constants.PasswordConfirm, code:401 }) ;
         
     next() ;
